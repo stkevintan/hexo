@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+- 6.8.1
+branches:
+  only:
+  - master
+before_install:
+- export TZ='Asia/Shanghai'
+- npm install -g hexo
+- npm install -g hexo-cli
+- openssl aes-256-cbc -K $encrypted_c7b776caa6ce_key -iv $encrypted_c7b776caa6ce_iv
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp ssh_config ~/.ssh/config
+before_script:
+- git config --global user.name "stkevintan"
+- git config --global user.email "stkevintan@zju.edu.cn"
+install:
+- npm install
+script:
+- hexo clean
+- hexo generate
+after_success:
+- hexo deploy

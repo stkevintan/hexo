@@ -1,0 +1,20 @@
+<header id="header">
+	<div id="header-wrapper" class="clearfix">
+		<a id="logo" href="/">
+			<%- config.title %>
+		</a>
+		<button id="site-nav-switch">
+	    <span class="icon icon-menu"></span>
+	  </button>
+	</div>
+	<aside id="site-menu">
+  	<nav>
+  		<% theme.navigation.forEach(function(value, key) {
+            if (value.url && value.slug && value.name) { %>
+        <a href="<%= value.url %>" class="nav-<%= value.slug %> nav">
+          <%= value.name %>
+        </a>
+      <% } }); %>
+    </nav>
+	</aside>
+</header>

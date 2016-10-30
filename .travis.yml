@@ -1,4 +1,10 @@
 language: node_js
+cache:
+  apt: true
+  directories:
+    - node_modules
+addons:
+  ssh_known_hosts: git.coding.net
 node_js:
 - 6.8.1
 branches:

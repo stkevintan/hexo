@@ -85,6 +85,100 @@
 
   
   <h2 class="title">
+    <a href="/2016/11/08/pygobject-tutorial-1/">
+      pygobject-tutorial-1
+    </a>
+  </h2>
+  
+  <time>
+    11月 8, 2016
+  </time>
+  <section class="content">
+	  <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>这章将会介绍GTK+比较重要的几个方面</p>
+<h2 id="主循环和信号"><a href="#主循环和信号" class="headerlink" title="主循环和信号"></a>主循环和信号</h2><p>就像大部分GUI库一样，GTK+使用了一种事件驱动的编程模型。当用户什么都没做，GTK+让主循环处于就绪状态并等待用户的输入。如果用户做了一些动作，比如鼠标事件，主循环就会被唤醒，然后将这个事件传递给GTK+程序。</p>
+<p>当部件收到一个事件，它们将会频繁的发出一个或者更多的信号，这些信号将会调用与之相绑定的函数。这样的函数通常被称作回调函数。当回调函数被调用时，你就可以进行一些操作了。比如说，你可能要弹出一个文件选择对话框当一个“打开”按钮被点击的之后。当回调函数执行完毕之后，GTK+将会返回到主循环然后等待用户再一次输入。</p>
+<p>一个典型的例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">handler_id = widget.connect(<span class="string">'event'</span>,callback,data)</div></pre></td></tr></table></figure></p>
+<p>首先，<code>widget</code>是一个之前以及创建好的widget实例。接着，我们来看看事件，每个部件都有它自己的事件。举个例子，如果你有一个按钮，那么你往往希望绑定它的点击事件。这样只要按钮被点击，你就能收到它所触发的信号。然后，参数<code>callback</code>代表者需要调用的回调函数的名字，它包含者将要运行的代码，当特定的信号产生之后。最后，<code>data</code>参数包含着任意你想要传递的数据，这个参数是一个可选参数，如果不需要可以省略。<br>该方法返回一个数值，标志着这个signal-callback对。当这个函数再也不会</p>
+
+
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/gtk/">gtk</a><a class="tag-link" href="/tags/python/">python</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
+    <a href="/2016/11/02/dom-compatibility-note/">
+      JS DOM API分析
+    </a>
+  </h2>
+  
+  <time>
+    11月 2, 2016
+  </time>
+  <section class="content">
+	  <h2 id="Element-classList"><a href="#Element-classList" class="headerlink" title="Element.classList"></a>Element.classList</h2><p>返回DOMTokenList,IE version&gt;=10不完全支持。</p>
+<ol>
+<li>不支持classList.contains的第二个参数(force)</li>
+<li>add和remove方法不支持多参数</li>
+<li>SVG,MathML结点没有classList属性</li>
+</ol>
+<h2 id="Node种类"><a href="#Node种类" class="headerlink" title="Node种类"></a>Node种类</h2><h3 id="Node-nodeName"><a href="#Node-nodeName" class="headerlink" title="Node.nodeName"></a>Node.nodeName</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">Interface</th>
+<th style="text-align:left">nodeName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Comment</td>
+<td style="text-align:left">#comment</td>
+</tr>
+<tr>
+<td style="text-align:left">Document</td>
+<td style="text-align:left">#document</td>
+</tr>
+<tr>
+<td style="text-align:left">DocumentFragment</td>
+<td style="text-align:left">#document-fragment</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Node的树遍历"><a href="#Node的树遍历" class="headerlink" title="Node的树遍历"></a>Node的树遍历</h2><p>Node树遍历普遍要考虑空白文字结点。(whitespace textNode)。</p>
+<h3 id="Node-childNodes"><a href="#Node-childNodes" class="headerlink" title="Node.childNodes"></a>Node.childNodes</h3><p>返回一个NodeList，表示该结点的所有子结点，包括文字结点和注释，该NodeList里面全部是object，并没有string。可以使用ParentNode.children来获得所有纯Element结点集合。</p>
+<h3 id="Node-firstChild"><a href="#Node-firstChild" class="headerlink" title="Node.firstChild"></a>Node.firstChild</h3><p>返回结点的第一个子结点。可能是whitespace textNode。<br>可以使用Element.firstElementChild来获得Element结点。</p>
+<h3 id="Node-lastChild"><a href="#Node-lastChild" class="headerlink" title="Node.lastChild"></a>Node.lastChild</h3><p>返回结点的最后一个子结点。可能是whitespace textNode。<br>可以使用Element.lastElementChild来获得Element结点。</p>
+<h3 id="Node-nextSibling"><a href="#Node-nextSibling" class="headerlink" title="Node.nextSibling"></a>Node.nextSibling</h3><p>返回下一个兄弟结点，可能是whitespace textNode。可以使用Element.nextElementSibling获得Element结点。</p>
+<h3 id="Node-previousSibling"><a href="#Node-previousSibling" class="headerlink" title="Node.previousSibling"></a>Node.previousSibling</h3><p>返回前一个兄弟结点，可能whitespace textNode。可以使用Element.previousElementSibling获得Element结点。</p>
+<h2 id="Node-innerText"><a href="#Node-innerText" class="headerlink" title="Node.innerText"></a>Node.innerText</h2><p>是一个非标准的属性，返回当前结点包括其子结点的所有文字。可以使用标准方法Node.textContent代替。</p>
+<h2 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h2><h2 id="Node-parentElement"><a href="#Node-parentElement" class="headerlink" title="Node.parentElement"></a>Node.parentElement</h2><p>返回当前Node的父Element元素，如果没有父Element元素，返回null。</p>
+<h2 id="Node-parentNode"><a href="#Node-parentNode" class="headerlink" title="Node.parentNode"></a>Node.parentNode</h2><p>一个元素的parentNode可能是另一个元素、Document或者DocumentFragment。<br>Document和DocumentFragment的parentNode是null，同样，一个刚刚创建的node，如果还没有加到dom树里面，它的parentNode同样是null。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//移除某element：</span></div><div class="line">ele.parentNode.removeChild(ele);</div></pre></td></tr></table></figure></p>
+
+
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/dom/">dom</a><a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/javascirpt/">javascirpt</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
     <a href="/2016/10/28/neutron-code/">
       neutron源码分析
     </a>
@@ -94,16 +188,13 @@
     10月 28, 2016
   </time>
   <section class="content">
-	  <h2 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h2><p>WSGI 是一个连接服务端和应用端的接口。WSGI把Web组件分为三部分：</p>
+	  <h2 id="消息总线"><a href="#消息总线" class="headerlink" title="消息总线"></a>消息总线</h2><p>Openstack各项目之间通过RESTful API进行通信；而项目内部不同服务进程则需要通过消息总线通信。关于消息总线的实现，包含在Openstack.oslo.messaging库中。</p>
+<h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><p>远程过程调用，一个服务进程可以调用其他远程服务进程的方法，有两种方式：</p>
 <ul>
-<li>WSGI Server</li>
-<li>WSGI Middleware</li>
-<li>WSGI Application</li>
+<li>call 远程方法会被同步执行，调用者会阻塞直到取得返回结果。</li>
+<li>cast 远程方法会被异步执行，调用者需要通过其他方式查询这次远程调用的结果。<h3 id="事件通知-Event-Notification"><a href="#事件通知-Event-Notification" class="headerlink" title="事件通知(Event Notification)"></a>事件通知(Event Notification)</h3>服务可以把事件通知发到消息总线上，该消息总线上所有对此类事件感兴趣的服务进程，都可以获得次事件通知并进行处理。处理结果不会返回事件发送者。</li>
 </ul>
-<p>An Application must return an iterable object.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(environ,start_response)</span>:</span></div><div class="line">   start_response(<span class="string">'200 Ok'</span>,[(<span class="string">'Content-Type'</span>,<span class="string">'text/plain'</span>)])</div><div class="line">   <span class="keyword">yield</span> <span class="string">'Hello World\n'</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li><code>environ</code>:一个dict，包括CGI中定义的环境变量以及7个WSGI所定义的环境变量：wsgi.version,wsgi_input…</li>
-<li><code>start_response</code>: 回调函数，要返回一个write(data)对象，用作兼容现有的特殊框架，一般返回None
+<h3 id="AMQP"><a href="#AMQP" class="headerlink" title="AMQP"></a>AMQP</h3><p>AMQP是一个异步消息传递所使用的开放的应用层协议规范。包括导向、队列、路由、可靠性和安全性。不同的AMQP实现可以进行相互操作。<br>所有消息都有一个routing key,所有Queue都有一个binding key。生产者将消息发送给Exchange,然后Exchange根据这两个key把消息送到相匹配的Queue中。不同类型的Exchange有不同的匹配算法。<br>|类型|说明|<br>|—|—|<br>|Direct|binding key和routing key必须完全一样，不支持通配符|<br>|Topic|同Direct类型，但是支持通配符，”*”匹配单字，“#”匹配零个或多个单字，单字之间由“.”来分割|<br>|Fanout|忽略binding key和routing key，广播式路由|</p>
 
     
 	  <div class="readmore">
@@ -124,28 +215,230 @@
 
   
   <h2 class="title">
-    <a href="/2016/09/20/hello-world/">
-      Hello World
+    <a href="/2015/02/25/hexo-lightum-enhance/">
+      Hexo折腾笔记（二）博客优化与定制
     </a>
   </h2>
   
   <time>
-    9月 20, 2016
+    2月 25, 2015
   </time>
   <section class="content">
-	  <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+	  <p>首先我使用的是由<a href="http://zipperary.com/">zippera</a>基于官方<a href="https://github.com/hexojs/hexo-theme-light">Light</a>主题改进而来的<a href="https://github.com/zippera/lightum">Lightum</a>主题,其他主题可能稍有出入。</p>
+<p>##速度优化<br>参考之前的文章：<a href="http://kevinsfork.info/2015/02/25/hexo-speedup-instantclick/">静态页面优化</a>。然后使用了<a href="https://github.com/gyk001/hexo-qiniu-sync">hexo-qiniu-sync</a>这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）</p>
+<p>对于处于body区域的script、style的引用尽可能的加入data-no-instant属性，避免InstantClick重复加载。</p>
+<p>##给instantclick加载进度条加上阴影效果<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#instantclick-bar</span>&#123;</div><div class="line"><span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.56);</div><div class="line"><span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.56);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>##加入Swiftype搜索<br>去<a href="https://swiftype.com/">Swiftype</a>官网申请代码，然后修改search.ejs文件为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"search"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">id</span>=<span class="string">"st-search-input"</span> <span class="attr">placeholder</span>=<span class="string">"&lt;%= __('search') %&gt;"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+
+    
+	  <div class="readmore">
+      <a href="/2015/02/25/hexo-lightum-enhance/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/美化/">美化</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
+    <a href="/2015/02/25/hexo-speedup-instantclick/">
+      Hexo折腾笔记（一）博客加速以及解决instantclick的兼容问题
+    </a>
+  </h2>
+  
+  <time>
+    2月 25, 2015
+  </time>
+  <section class="content">
+	  <p><del>首先，Gitcafe的国内速度已经够快了，加不加速其实没多大区别,只不过是闲的蛋疼而已。</del><br>Gitcafe无故page不更新，所以又换回了github。</p>
+<h2 id="Hexo加速"><a href="#Hexo加速" class="headerlink" title="Hexo加速"></a>Hexo加速</h2><p>Hexo加速可以有以下几个方面：</p>
+<ol>
+<li>使用<a href="http://www.bootcdn.cn/">BootCDN</a>并将图片等资源储存至七牛云。可以使用此项目<a href="https://github.com/gyk001/hexo-qiniu-sync">click here</a>。</li>
+<li>使用<a href="https://github.com/FlashSoft/hexo-console-optimize">hexo optimize</a>压缩优化HTML、CSS、JS、Image资源。</li>
+<li>使用<a href="http://instantclick.io/">InstantClick</a>。</li>
+</ol>
+<p>InstantClick是一款类似于<a href="http://instantclick.io/">Turbolinks</a>的js库，利用<a href="https://github.com/defunkt/jquery-pjax">pjax</a>（pushState and Ajax)技术对网站进行优化，能够极大的提高访问速度。</p>
+<h2 id="解决InstantClick的兼容问题"><a href="#解决InstantClick的兼容问题" class="headerlink" title="解决InstantClick的兼容问题"></a>解决InstantClick的兼容问题</h2><p>InstantClick效果明显，但是副作用也大。加入它之后，原来相处无碍的Fancybox、百度分享、百度统计、 mathJax、多说评论都挂了。下面是我的解决方法：<br>
+
+    
+	  <div class="readmore">
+      <a href="/2015/02/25/hexo-speedup-instantclick/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/instantclick/">instantclick</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
+    <a href="/2015/02/24/shadowsocks-account/">
+      Shadowsocks免费账号网址集
+    </a>
+  </h2>
+  
+  <time>
+    2月 24, 2015
+  </time>
+  <section class="content">
+	  <p>G+圈子很多这样的网站，大部分是由<a href="https://github.com/orvice/ss-panel" target="_blank" rel="external">ss-panel</a>这个开源项目建成。不知道他们是乐于分享还是另有目的。下面是列表：</p>
+<ol>
+<li><a href="https://cattt.com/" target="_blank" rel="external">Shadow X</a>(ss-panel作者)</li>
+<li><a href="http://free.kuaishangss.tk/" target="_blank" rel="external">kuaishangSS</a></li>
+<li><a href="http://vpn.lintwo.com/" target="_blank" rel="external">pepsishadowsocks</a></li>
+<li><a href="http://tashi.xyz/" target="_blank" rel="external">ChangZ</a></li>
+<li><a href="http://ss.ssserver.biz/" target="_blank" rel="external">ssserver</a></li>
+</ol>
+<p>另外推荐Linux下ss GUI客户端：<a href="https://github.com/librehat/shadowsocks-qt5" target="_blank" rel="external">shadowsocks-qt5</a></p>
 
 
     
     
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/shadowsocks/">shadowsocks</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
+    <a href="/2015/02/24/ASP-NET-MVC4note2/">
+      ASP.NET MVC 4笔记（二）
+    </a>
+  </h2>
+  
+  <time>
+    2月 24, 2015
+  </time>
+  <section class="content">
+	  <ol>
+<li>有Timestamp修饰的表在修改已有的记录是一定要将该字段复制，也就是说一定要在Edit网页里面添加一行：<pre><code>@Html.HiddenFor(model =&gt; model.RowVersion)
+</code></pre></li>
+<li>WebSecurity.CreateAccount必须在Userprofile里面先创建账户。<pre><code>System.Diagnostics.Debug.WriteLine(&quot;OnAction:&quot; + controller + &quot;/&quot; + action);
+</code></pre></li>
+<li>转换string数组到int数组<pre><code>int[] HostsList = Array.ConvertAll&lt;string, int&gt;(Request[&quot;HostsId&quot;].Split(&apos;,&apos;), u =&gt; int.Parse(u));
+</code></pre></li>
+</ol>
+
+
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/C/">C#</a><a class="tag-link" href="/tags/asp-net-mvc4/">asp.net mvc4</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
+    <a href="/2015/02/24/ASP-NET-MVC4-note1-Simplemembership/">
+      ASP.NET MVC4笔记（一） 扩展Simplemembership
+    </a>
+  </h2>
+  
+  <time>
+    2月 24, 2015
+  </time>
+  <section class="content">
+	  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">using System.Web.Mvc;</div><div class="line"></div><div class="line">namespace MvcClassManageSystem.ActionFilters</div><div class="line">&#123;</div><div class="line">    public class LogStateFilterAttribute : ActionFilterAttribute</div><div class="line">    &#123;</div><div class="line">        public override void OnActionExecuting(ActionExecutingContext filterContext)</div><div class="line">        &#123;</div><div class="line">            base.OnActionExecuting(filterContext);</div><div class="line">            //string controller = filterContext.RouteData.Values[&quot;controller&quot;].ToString();</div><div class="line">            //string action = filterContext.RouteData.Values[&quot;action&quot;].ToString();</div><div class="line">            //System.Diagnostics.Debug.WriteLine(&quot;OnAction:&quot; + controller + &quot;/&quot; + action);</div><div class="line"></div><div class="line">            if (WebMatrix.WebData.WebSecurity.IsAuthenticated == true)</div><div class="line">            &#123;</div><div class="line">                filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(new &#123; Controller = &quot;Home&quot;, action = &quot;Index&quot; &#125;));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+    
+	  <div class="readmore">
+      <a href="/2015/02/24/ASP-NET-MVC4-note1-Simplemembership/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/C/">C#</a><a class="tag-link" href="/tags/asp-net-mvc4/">asp.net mvc4</a><a class="tag-link" href="/tags/simplemembership/">simplemembership</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
+    <a href="/2015/02/14/show-kde4-again/">
+      再来晒晒我的KDE
+    </a>
+  </h2>
+  
+  <time>
+    2月 14, 2015
+  </time>
+  <section class="content">
+	  <p>RT，我就这点出息，不过Arch上KDE4正在慢慢过渡到KDE5，这个桌面用不了多久就out of date了。 so sad….</p>
+<p><a href="http://sforkw-wp.qiniudn.com/jae/uploads/2015/02/logo20.png"><img src="http://sforkw-wp.qiniudn.com/jae/uploads/2015/02/logo20-1024x575.png" alt="logo20"></a><br>
+
+    
+	  <div class="readmore">
+      <a href="/2015/02/14/show-kde4-again/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/DE-WM/">DE/WM</a><a class="tag-link" href="/tags/linux/">linux</a><a class="tag-link" href="/tags/美化/">美化</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
+    <a href="/2014/12/07/kde-to-mac/">
+      KDE的Mac向折腾指南
+    </a>
+  </h2>
+  
+  <time>
+    12月 7, 2014
+  </time>
+  <section class="content">
+	  <p>惯例，先上图：</p>
+<p><a href="http://sforkw-wp.qiniudn.com/jae/uploads/2014/12/logo9.png"><img src="http://sforkw-wp.qiniudn.com/jae/uploads/2014/12/logo9-1024x575.png" alt="logo9"></a><br>
+
+    
+	  <div class="readmore">
+      <a href="/2014/12/07/kde-to-mac/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/DE-WM/">DE/WM</a><a class="tag-link" href="/tags/linux/">linux</a><a class="tag-link" href="/tags/美化/">美化</a>
+	  </div>
     
 
   </section>
@@ -153,6 +446,17 @@
   
 </section>
 
+
+  <nav id="page-nav">
+    
+    
+    <a class="next" rel="next" href="/page/2/">
+      <span class="text">Next</span>
+      <span class="icon icon-chevron-right"></span>
+    </a>
+    
+  </nav>
+  
 
       <script>setLoadingBarProgress(60);</script>
     </main>
@@ -186,16 +490,6 @@
         <a href="/atom.xml" class="social rss"
           target="_blank" rel="external">
           <span class="icon icon-rss"></span>
-        </a>
-      
-        <a href="https://plus.google.com/u/0/116188417424462670099" class="social google"
-          target="_blank" rel="external">
-          <span class="icon icon-google"></span>
-        </a>
-      
-        <a href="http://weibo.com/kevinclasky" class="social sina-weibo"
-          target="_blank" rel="external">
-          <span class="icon icon-sina-weibo"></span>
         </a>
       
     

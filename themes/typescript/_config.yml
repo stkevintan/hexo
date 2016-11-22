@@ -52,14 +52,14 @@ social:
   url: https://twitter.com/kevinclasky
 - slug: rss
 	url: /atom.xml
-- slug: google
-  url: https://plus.google.com/u/0/116188417424462670099
-- slug: facebook
-  url: # https://www.facebook.com/
-- slug: linkedin
-  url: # https://www.linkedin.com/
-- slug: sina-weibo
-  url: http://weibo.com/kevinclasky
+# - slug: google
+#   url: https://plus.google.com/u/0/116188417424462670099
+# - slug: facebook
+#   url: # https://www.facebook.com/
+# - slug: linkedin
+#   url: # https://www.linkedin.com/
+# - slug: sina-weibo
+#   url: http://weibo.com/kevinclasky
 # - slug: tumblr
 #   url: # http://artchen.tumblr.com
 # - slug: dribbble

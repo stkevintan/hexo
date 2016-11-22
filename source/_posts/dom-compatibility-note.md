@@ -3,8 +3,9 @@ title: JS DOM API分析
 date: 2016-11-02 21:07:21
 categories:
 - Web
-tags:[javascirpt,dom,html]
+tags: [javascirpt,dom,html]
 ---
+
 ## Element.classList
 返回DOMTokenList,IE version>=10不完全支持。
 1. 不支持classList.contains的第二个参数(force)
@@ -14,7 +15,7 @@ tags:[javascirpt,dom,html]
 ## Node种类
 ### Node.nodeName
 |Interface|nodeName|
-|---------|--------|
+|:---------|:--------|
 |Comment|#comment|
 |Document|#document|
 |DocumentFragment|#document-fragment|

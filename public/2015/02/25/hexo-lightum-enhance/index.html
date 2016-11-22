@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Hexo折腾笔记（二）博客优化与定制 | Kevin&#39;s Home</title>
+  <meta name="description" content="{{theme.description}}" />
+  <meta name="keywords" content="{{theme.keywords}}" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首先我使用的是由zippera基于官方Light主题改进而来的Lightum主题,其他主题可能稍有出入。
+##速度优化参考之前的文章：静态页面优化。然后使用了hexo-qiniu-sync这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）
+对于处于body区域的scr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo折腾笔记（二）博客优化与定制">
+<meta property="og:url" content="http://sfork.coding.me/2015/02/25/hexo-lightum-enhance/index.html">
+<meta property="og:site_name" content="Kevin's Home">
+<meta property="og:description" content="首先我使用的是由zippera基于官方Light主题改进而来的Lightum主题,其他主题可能稍有出入。
+##速度优化参考之前的文章：静态页面优化。然后使用了hexo-qiniu-sync这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）
+对于处于body区域的scr">
+<meta property="og:updated_time" content="2015-03-01T04:22:54.074Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo折腾笔记（二）博客优化与定制">
+<meta name="twitter:description" content="首先我使用的是由zippera基于官方Light主题改进而来的Lightum主题,其他主题可能稍有出入。
+##速度优化参考之前的文章：静态页面优化。然后使用了hexo-qiniu-sync这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）
+对于处于body区域的scr">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+  <script>setLoadingBarProgress(20)</script>
+  
+  <div id="site-wrapper">
+    
+    <header id="header">
+	<div id="header-wrapper" class="clearfix">
+		<a id="logo" href="/">
+			Kevin's Home
+		</a>
+		<button id="site-nav-switch">
+	    <span class="icon icon-menu"></span>
+	  </button>
+	</div>
+	<aside id="site-menu">
+  	<nav>
+  		
+        <a href="/" class="nav-home nav">
+          Home
+        </a>
+      
+        <a href="/about" class="nav-about nav">
+          About
+        </a>
+      
+        <a href="/archives" class="nav-archives nav">
+          Archives
+        </a>
+      
+    </nav>
+	</aside>
+</header>
+
+    <script>setLoadingBarProgress(40);</script>
+    
+    <main id="main" role="main">
+      <article id="post-hexo-lightum-enhance"
+  class="post article white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<h2 class="title">
+  	<a href="/2015/02/25/hexo-lightum-enhance/">
+    	Hexo折腾笔记（二）博客优化与定制
+    </a>
+  </h2>
+	<time>
+	  2月 25, 2015
+	</time>
+	<section class="content">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>首先我使用的是由<a href="http://zipperary.com/" target="_blank" rel="external">zippera</a>基于官方<a href="https://github.com/hexojs/hexo-theme-light" target="_blank" rel="external">Light</a>主题改进而来的<a href="https://github.com/zippera/lightum" target="_blank" rel="external">Lightum</a>主题,其他主题可能稍有出入。</p>
+<p>##速度优化<br>参考之前的文章：<a href="http://kevinsfork.info/2015/02/25/hexo-speedup-instantclick/" target="_blank" rel="external">静态页面优化</a>。然后使用了<a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">hexo-qiniu-sync</a>这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）</p>
+<p>对于处于body区域的script、style的引用尽可能的加入data-no-instant属性，避免InstantClick重复加载。</p>
+<p>##给instantclick加载进度条加上阴影效果<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#instantclick-bar</span>&#123;</div><div class="line"><span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.56);</div><div class="line"><span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.56);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>##加入Swiftype搜索<br>去<a href="https://swiftype.com/" target="_blank" rel="external">Swiftype</a>官网申请代码，然后修改search.ejs文件为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"search"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">id</span>=<span class="string">"st-search-input"</span> <span class="attr">placeholder</span>=<span class="string">"&lt;%= __('search') %&gt;"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+ <a id="more"></a>
+<p>更具体的指导具体可以参考这篇文章：<a href="http://lukang.me/2015/optimization-of-hexo-2.html" target="_blank" rel="external">click here</a>。</p>
+<p>##改进多说评论框</p>
+<p>###添加data-thread-key等属性<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 多说评论框 start --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-thread"</span> <span class="attr">data-thread-key</span>=<span class="string">"&lt;%= page.path %&gt;"</span> <span class="attr">data-title</span>=<span class="string">"&lt;%= page.title %&gt;"</span> <span class="attr">data-url</span>=<span class="string">"&lt;%= page.permalink %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说评论框 end --&gt;</span></div></pre></td></tr></table></figure></p>
+<p>###美化多说评论框<br>进入多说评论的管理后台，将下面代码粘贴到‘设置-&gt;自定义CSS’中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#ds-reset .ds-avatar img&#123;width:54px;height:54px;border-radius:27px;-webkit-border-radius:27px;-moz-border-radius:27px;box-shadow:inset 0 -1px 0 #3333sf;-webkit-box-shadow:inset 0 -1px 0 #3333sf;-webkit-transition:0.4s;-webkit-transition:-webkit-transform 0.4s ease-out;transition:transform 0.4s ease-out;-moz-transition:-moz-transform 0.4s ease-out;&#125;</div><div class="line">#ds-reset .ds-avatar img:hover&#123;box-shadow:0 0 10px #fff;rgba(255,255,255,.6),inset 0 0 20px rgba(255,255,255,1);-webkit-box-shadow:0 0 10px #fff;rgba(255,255,255,.6),inset 0 0 20px rgba(255,255,255,1);transform:rotateZ(360deg);-webkit-transform:rotateZ(360deg);-moz-transform:rotateZ(360deg);&#125;</div><div class="line">p.ds-powered-by,#ds-sync-checkbox,.ds-sync label&#123;display:none!important;&#125;</div><div class="line">#ds-reset .ds-rounded-top&#123;-webkit-border-top-right-radius:0px;-webkit-border-top-left-radius:0px;border-top-right-radius:0px;border-top-left-radius:0px;&#125;</div><div class="line">#ds-thread #ds-reset .ds-textarea-wrapper&#123;background:#fff;border:0;margin-bottom:20px;padding-right:0px;&#125;</div><div class="line">#ds-thread #ds-reset .ds-textarea-wrapper textarea&#123;min-height:80px;border:1px solid #ccc;padding:10px;-webkit-appearance:none;border-radius:0;background-color:#FFFFFF;border-color:#cccccc;box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);color:rgba(0,0,0,0.75);-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition:border-color 0.15s linear,background 0.15s linear;-moz-transition:border-color 0.15s linear,background 0.15s linear;-ms-transition:border-color 0.15s linear,background 0.15s linear;-o-transition:border-color 0.15s linear,background 0.15s linear;transition:border-color 0.15s linear,background 0.15s linear;&#125;</div><div class="line">#ds-thread #ds-reset .ds-textarea-wrapper textarea:focus&#123;border-color:#999999;background:#fafafa;outline:none;&#125;</div><div class="line">#ds-thread #ds-reset .ds-post-options&#123;border-bottom-left-radius:0px;-webkit-border-bottom-left-radius:0px;border:none;background:none!important;&#125;</div><div class="line">#ds-thread #ds-reset .ds-post-button&#123;border-bottom-right-radius:0px;-webkit-border-bottom-right-radius:0px;&#125;</div><div class="line">#ds-reset .ds-textarea-wrapper textarea:focus&#123;border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);&#125;</div><div class="line">#ds-thread #ds-reset .ds-post-button&#123;background-image:none;text-shadow:none;border:none;font-weight:normal;line-height:normal;position:absolute;-webkit-appearance:button;-moz-appearance:button;background-color:#008CBA;border-color:#007095;color:#FFFFFF;transition:background-color 300ms ease-out;&#125;</div><div class="line">#ds-thread #ds-reset .ds-post-button:hover,#ds-thread #ds-reset .ds-post-button:focus&#123;background-color:#007095;color:#FFFFFF;&#125;</div></pre></td></tr></table></figure></p>
+<p>##加入多说最新评论<br>修改’theme/lightum/_config.yml’文件，在widgets下面添加<code>- recent_comments</code>项。<br>在主题文件的’theme/lightum/layout/_widget’目录中新建recent_comments.ejs文件，并放入如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;widget tag&quot;&gt;</div><div class="line">&lt;h3 class=&quot;title&quot;&gt;&lt;%= __(&apos;recent_comments&apos;)&lt;/h3&gt;</div><div class="line">&lt;div class=&quot;entry&quot;&gt;</div><div class="line">&lt;!-- 多说最新评论 start --&gt;</div><div class="line">    &lt;div class=&quot;ds-recent-comments&quot; data-num-items=&quot;5&quot; data-show-avatars=&quot;1&quot; data-show-time=&quot;1&quot; data-show-title=&quot;1&quot; data-show-admin=&quot;1&quot; data-excerpt-length=&quot;70&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;!-- 多说最新评论 end --&gt;</div><div class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">..........</div><div class="line">&lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>然后在’/languages/zh-CN.yml’文件添加翻译：<code>recent_comments: 最新评论</code></p>
+<p>最后，原来的评论样式不太符合lightum主题，可以在’/source/css/_partial’里建立一个recent_comment.styl文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.ds-recent-comments</div><div class="line">  li.ds-comment</div><div class="line">    &amp;:first-child</div><div class="line">      border-top none !important</div></pre></td></tr></table></figure></p>
+<p>然后在/theme/lightum/source/css/style中将之包括进来：<code>@import &#39;_partial/recent_comments&#39;</code></p>
+<p>多说的这个插件同样不兼容于instantclick。我们可以在这篇文章的基础上解决：<a href="/2015/02/25/hexo-speedup-instantclick/">click here</a>:</p>
+<ul>
+<li>将多说的公共JS放入head或加入’data-no-instant’属性放入body中，并删除recent.ejs与comment.ejs中重复的JS。</li>
+<li>修改change事件中的代码为：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if(typeof DUOSHUO !== &apos;undefined&apos;)&#123; //support 多说评论框</div><div class="line">if($(&quot;.ds-thread&quot;).length)&#123;</div><div class="line">    DUOSHUO.EmbedThread($(&apos;.ds-thread&apos;)[0]);</div><div class="line">&#125;</div><div class="line">DUOSHUO.RecentComments($(&apos;.ds-recent-comments&apos;)[0]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样虽然能够解决问题，但是会显示方面又会出现点小问题。可以加入下面css修复：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">span.caption&#123;</div><div class="line">display: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="加入文章导航"><a href="#加入文章导航" class="headerlink" title="加入文章导航"></a>加入文章导航</h2><p>修改’/layout/_partical/article.ejs’文件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">class</span>=<span class="string">"&lt;%= item.layout %&gt;"</span>&gt;</span></div><div class="line">  // ...</div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"entry"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">item.excerpt</span> &amp;&amp; <span class="attr">index</span>)&#123; %&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.excerpt</span> %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; <span class="attr">else</span> &#123; %&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">index</span>)&#123; %&gt;</span></div><div class="line">        // 插入文章导航</div><div class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">toc</span>') %&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.content</span> %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在’\source\css_partial\article.styl’文件后添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.toc-article</div><div class="line">  float right</div><div class="line">   </div><div class="line">#toc</div><div class="line">  background #eee</div><div class="line">  margin 0 0 10px 20px</div><div class="line">  padding 12px</div><div class="line">  line-height 18px</div><div class="line">  font-size 10px</div><div class="line">  strong</div><div class="line">    font-size 15px</div><div class="line">  ol</div><div class="line">    margin-top 5px</div><div class="line">    margin-left 0</div><div class="line">  .toc</div><div class="line">    padding 0</div><div class="line">    li</div><div class="line">      list-style-type none</div><div class="line">  .toc-child</div><div class="line">    padding-left 20px</div></pre></td></tr></table></figure></p>
+<p>这样，我们就能在写文章的时候添加<code>toc: true</code>来启动文章导航功能。</p>
+<p>###扩展：浮动式导航<br>实现当页面滑动到下方时将文章导航浮动到屏幕右侧。</p>
+<p>在’\layout_partial\’里新建文件：<code>float_nav.ejs</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"menu-nav"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"title-nav"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">navigation</span>') %&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>→<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content-nav"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">%-</span> <span class="attr">toc</span>(<span class="attr">item.content</span>) %&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$, scrollSpeed, hiddenSpeed, fadeSpeed</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> T = $(<span class="string">'#toc'</span>);</div><div class="line">	<span class="keyword">var</span> M = $(<span class="string">'#menu-nav'</span>);</div><div class="line">	<span class="keyword">var</span> C = $(<span class="string">'#content-nav'</span>);</div><div class="line">	<span class="keyword">var</span> Tx = T.position().top;</div><div class="line">	$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> top = $(<span class="keyword">this</span>).scrollTop();</div><div class="line">		<span class="keyword">if</span> (top &gt;= Tx + <span class="number">300</span>) &#123;</div><div class="line">			M.stop().fadeIn(fadeSpeed);</div><div class="line">			T.stop().fadeTo(fadeSpeed, <span class="number">0</span>);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			M.stop().fadeOut(fadeSpeed);</div><div class="line">			T.stop().fadeTo(fadeSpeed, <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	$(<span class="string">'.toc-link'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		<span class="comment">//阻止默认跳转</span></div><div class="line">		e.preventDefault();</div><div class="line">		<span class="comment">//定义滚动动画</span></div><div class="line">		<span class="keyword">var</span> scrollTarget = $(<span class="string">'#'</span> + $(<span class="keyword">this</span>).children(<span class="string">'.toc-text'</span>).first().text());</div><div class="line">		$(<span class="string">"html,body"</span>).animate(&#123;</div><div class="line">			scrollTop: scrollTarget.prev().offset().top</div><div class="line">		&#125;, scrollSpeed);</div><div class="line">	&#125;);</div><div class="line">	C.click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		e.stopPropagation();</div><div class="line">	&#125;);</div><div class="line">	M.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		C.toggle(hiddenSpeed, <span class="string">'linear'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">var</span> T = $(<span class="string">'#title-nav div'</span>);</div><div class="line">			T.text() == <span class="string">'←'</span> ? T.text(<span class="string">'→'</span>) : T.text(<span class="string">'←'</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line">&#125;)(jQuery, <span class="number">500</span>, <span class="number">200</span>, <span class="number">100</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在’layout/_partial/article.ejs’中添加对其的引用：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(!<span class="attr">index</span> &amp;&amp; <span class="attr">item.toc</span>)&#123; %&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">float_nav</span>') %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure></p>
+<p>添加css样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">navbcolor=rgba(100, 100, 100, 0.74)</div><div class="line">#menu-nav</div><div class="line">  position fixed;</div><div class="line">  display none;</div><div class="line">  cursor pointer;</div><div class="line">  z-index 150;</div><div class="line">  right 0;</div><div class="line">  top 20%;</div><div class="line">  box-shadow 0 0 5px rgba(0, 0, 0, 0.15);</div><div class="line">  color white;</div><div class="line">  background navbcolor;</div><div class="line">  #title-nav</div><div class="line">    display inline-block;</div><div class="line">    vertical-align middle;</div><div class="line">    width: 30px;</div><div class="line">    height: 100%;</div><div class="line">    font-size: 16px;</div><div class="line">    text-align: center;</div><div class="line">    padding: 10px 0;</div><div class="line">  #content-nav</div><div class="line">    display inline-block;</div><div class="line">    vertical-align middle;</div><div class="line">    white-space:nowrap;</div><div class="line">    border-left: 1px dashed #ccc;</div><div class="line">    box-sizing border-box;</div><div class="line">    padding 15px;</div><div class="line">    line-height 18px;</div><div class="line">    font-size 10px;</div><div class="line">    li</div><div class="line">      list-style-type none;</div><div class="line">      width 100%;</div><div class="line">      a</div><div class="line">        display block;</div><div class="line">        box-sizing border-box;</div><div class="line">        color #FFFFFF;</div><div class="line">        &amp;:hover</div><div class="line">          background rgba(100, 100, 100, 1);</div><div class="line">      .toc-child a</div><div class="line">        padding-left 20px;</div></pre></td></tr></table></figure></p>
+<p>###添加”返回顶部”<br>与上一节相似，在’layout/_widget/‘中添加<code>totop.ejs</code>文件：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"to-top"</span>&gt;</span>↑<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$, scrollSpeed, fadeSpeed</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> T = $(<span class="string">'#to-top'</span>);</div><div class="line">	$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> top = $(<span class="keyword">this</span>).scrollTop();</div><div class="line">		<span class="keyword">if</span> (top &gt;= <span class="number">300</span>) &#123;</div><div class="line">			T.stop().fadeIn(fadeSpeed);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			T.stop().fadeOut(fadeSpeed);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	T.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		$(<span class="string">"html,body"</span>).animate(&#123;</div><div class="line">			scrollTop: <span class="number">0</span></div><div class="line">		&#125;, scrollSpeed);</div><div class="line">	&#125;);</div><div class="line">&#125;)(jQuery, <span class="number">500</span>, <span class="number">200</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在’lightum/_config.yml’中启用该挂件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">widgets:</div><div class="line">- totop</div></pre></td></tr></table></figure></p>
+<p>添加css样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#to-top</div><div class="line">  background navbcolor;</div><div class="line">  position fixed;</div><div class="line">  display none;</div><div class="line">  z-index 200;</div><div class="line">  right 40px;</div><div class="line">  bottom 10%;</div><div class="line">  box-shadow 0 0 5px rgba(0, 0, 0, 0.15);</div><div class="line">  font-size 14px;</div><div class="line">  color white;</div><div class="line">  padding 5px 15px;</div><div class="line">  cursor pointer;</div><div class="line">  font-size 12px;</div><div class="line">  text-align center;</div><div class="line">  &amp;:hover</div><div class="line">    background rgba(100,100,100,1);</div></pre></td></tr></table></figure></p>
+<p>##参考</p>
+<ul>
+<li><a href="http://deffi.info/2014/10/03/Hexo-%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E4%B8%BA%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD/" target="_blank" rel="external">Hexo 主题修改:为博客实现更多功能</a></li>
+<li><a href="https://luolei.org/duoshuo-css/" target="_blank" rel="external">多说评论也玩圆角头像动画「自定义CSS:无压力小白级教程」</a></li>
+<li><a href="http://lukang.me/2015/optimization-of-hexo-2.html" target="_blank" rel="external">Hexo 优化与定制(二)</a></li>
+</ul>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+		  
+        <a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/美化/">美化</a>
+      
+	  </div>
+	</section>
+</article>
+
+
+<section id="comments">
+	<div id="disqus_thread"></div>
+</section>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </main>
+    
+    <footer id="footer" class="clearfix">
+  
+  
+	<div class="search">
+	  <form name="searchform" id="searchform" class="u-search-form">
+	    <input type="text" id="searchinput" class="u-search-input" placeholder="Looking for something?" />
+	    <button type="submit" id="u-search-btn-submit" class="u-search-btn-submit">
+	      <span class="icon icon-search"></span>
+	    </button>
+	  </form>
+	</div>
+	
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/stkevintan" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/kevinclasky" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <span class="codename">Typescript</span> designed by <a href="http://rakugaki.me/" target="_blank">Art Chen</a>.</div>
+  <div>&copy; <a href="/">Kevin&#39;s Home</a></div>
+  
+</footer>
+
+
+    <script>setLoadingBarProgress(80);</script>
+    
+  </div>
+
+  
+  
+<script>
+  var disqus_shortname = 'kevinhome';
+  
+  var disqus_url = 'http://sfork.coding.me/2015/02/25/hexo-lightum-enhance/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
+
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+  
+</body>
+</html>

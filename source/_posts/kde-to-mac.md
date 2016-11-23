@@ -1,10 +1,15 @@
 title: KDE的Mac向折腾指南
 categories:
-  - KDE
+
+- KDE
+
 id: 157
 date: 2014-12-07 12:45:53
 tags: [linux,DE/WM,美化]
+
 ---
+
+
 
 惯例，先上图：
 
@@ -124,7 +129,6 @@ GlowPulseTime=2000
 UrgentHueShift=150
 #The time (in ms) to move an item to its new position.
 ItemMoveTime=150
-
 ```
 ```language
 #This theme written by Perian. thexperian.deviantart.com

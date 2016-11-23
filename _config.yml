@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Kevin's Home
+title: World of Forks
 subtitle: Kevin's Home
-description: My blog, my world.
-author: Kevin
-language: zh-cn
-timezone: Asia/Hong_Kong
+description: A blog of stkevintan
+author: Kevin Tan
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -25,7 +25,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: 
+skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -64,41 +64,10 @@ disqus_shortname: kevinhome
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: typescript
-# Generator json content
-jsonContent:
-  meta: false
-  keywords: false
-  pages:
-    title: true
-    slug: false
-    date: false
-    updated: false
-    comments: false
-    path: false
-    link: false
-    permalink: true
-    excerpt: false
-    keywords: false
-    text: true
-    raw: false
-    content: false
-  posts:
-    title: true
-    slug: false
-    date: false
-    updated: false
-    comments: false
-    path: false
-    link: false
-    permalink: true
-    excerpt: false
-    keywords: false
-    text: true
-    raw: false
-    content: false
-    categories: false
-    tags: false
+theme: material
+search:
+  path: search.xml
+  field: post
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

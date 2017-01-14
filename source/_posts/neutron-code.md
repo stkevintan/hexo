@@ -9,21 +9,23 @@ Openstack各项目之间通过RESTful API进行通信；而项目内部不同服
 远程过程调用，一个服务进程可以调用其他远程服务进程的方法，有两种方式：
 - call 远程方法会被同步执行，调用者会阻塞直到取得返回结果。
 - cast 远程方法会被异步执行，调用者需要通过其他方式查询这次远程调用的结果。
+
+
 ### 事件通知(Event Notification)
 服务可以把事件通知发到消息总线上，该消息总线上所有对此类事件感兴趣的服务进程，都可以获得次事件通知并进行处理。处理结果不会返回事件发送者。
 
 ### AMQP
 AMQP是一个异步消息传递所使用的开放的应用层协议规范。包括导向、队列、路由、可靠性和安全性。不同的AMQP实现可以进行相互操作。
 所有消息都有一个routing key,所有Queue都有一个binding key。生产者将消息发送给Exchange,然后Exchange根据这两个key把消息送到相匹配的Queue中。不同类型的Exchange有不同的匹配算法。
+<!--more-->
+
 |类型|说明|
-|---|---|
+|:---|:---|
 |Direct|binding key和routing key必须完全一样，不支持通配符|
 |Topic|同Direct类型，但是支持通配符，"*"匹配单字，“#”匹配零个或多个单字，单字之间由“.”来分割|
 |Fanout|忽略binding key和routing key，广播式路由|
 
 
-
-<!--more-->
 ## WSGI
 WSGI 是一个连接服务端和应用端的接口。WSGI把Web组件分为三部分：
 - WSGI Server

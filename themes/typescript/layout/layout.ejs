@@ -1,8 +1,7 @@
 <%- partial('_partial/head') %>
 <body>
-
   <%- partial('_partial/loading') %>
-  <script>setLoadingBarProgress(20)</script>
+  <script>setLoadingBarProgress(20)</script> 
 
   <div id="site-wrapper">
 
@@ -10,17 +9,20 @@
     <script>setLoadingBarProgress(40);</script>
 
     <main id="main" role="main">
-      <%- body %>
+      <div class='side'>
+        <%- partial('_partial/side') %>
+      </div>
+      <div class='body'>
+        <%- body %>
+      </div>
+      
       <script>setLoadingBarProgress(60);</script>
     </main>
 
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
     <script>setLoadingBarProgress(80);</script>
-
   </div>
-
   <%- partial('_partial/scripts') %>
   <script>setLoadingBarProgress(100);</script>
-
 </body>
 </html>

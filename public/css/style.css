@@ -619,7 +619,9 @@ a {
 }
 #scheme-Paradox .material-layout .material-layout__content {
     position: relative;
+    min-height: 100%;
     padding-top: 165px;
+    padding-bottom: calc(5pc + 120px)
     margin: 0 auto;
     width: 100%;
 }
@@ -961,6 +963,11 @@ a {
     height: 120px;
     background-color: #fff;
     align-items: center
+}
+#bottom{
+  position:absolute;
+  width:100%;
+  bottom:0;
 }
 @media screen and (max-width: 840px) {
     #scheme-Paradox .material-layout .mdl-mini-footer {
@@ -1725,7 +1732,7 @@ a {
 
 @media screen and (min-width: 1183px){
 	#scheme-Isolation .header-title{
-	
+
 	}
 }
 
@@ -1763,16 +1770,16 @@ a {
 		padding-top: 24px;
 		border-top: 1px solid #c7ced1;
 	}
-	
+
 	#scheme-Isolation .header-nav span{
 		margin-right: 8px;
 	    margin-left: 8px;
 	}
-	
+
 	#scheme-Isolation .header-nav span:first-child{
 		margin-left: 0;
 	}
-	
+
 	#scheme-Isolation .header-nav span:last-child{
 		margin-right: 0;
 	}

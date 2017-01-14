@@ -20,6 +20,7 @@ tags: [javascirpt,dom,html]
 |Document|#document|
 |DocumentFragment|#document-fragment|
 
+<!--more-->
 ## Node的树遍历
 Node树遍历普遍要考虑空白文字结点。(whitespace textNode)。
 ### Node.childNodes

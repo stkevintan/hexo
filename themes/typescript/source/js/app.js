@@ -1,3 +1,4 @@
+/* eslint-disable */
 var customSearch;
 (function($) {
 	
@@ -10,23 +11,36 @@ var customSearch;
     $('html, body').animate({'scrollTop': $(self.attr('href')).offset().top - correction }, 400);
   };
 	
-  var closeMenu = function(e) {
-	  e.stopPropagation();
+  var closeMenu = function() {
     $('body').removeClass('menu-open');
 		$('#site-nav-switch').removeClass('active');
   };
   
-  var toggleMenu = function(e) {
-	  e.stopPropagation();
+  var toggleMenu = function() {
 	  $('body').toggleClass('menu-open');
     $('#site-nav-switch').toggleClass('active');
   };
 	
+	var openSearch = function() {
+		$('#header').addClass('search-open');
+	}
+	
+	var closeSearch = function(e) {
+		$('#header').removeClass('search-open');
+	}
 	$(function() {
 		$('#footer, #main').addClass('loaded');
-		$('#site-nav-switch').on('click', toggleMenu);
-		$(document).on('click', closeMenu);
-		$('#site-menu').on('click', function (e) {
+		$('#site-nav-switch').click(function(e){e.stopPropagation();toggleMenu()});
+		$('#header .search-switch').click(function(e){
+			e.stopPropagation();
+			openSearch();
+		})
+		$(document).on('click', function(e){
+			e.stopPropagation();
+			closeMenu();
+			closeSearch();
+		});
+		$('#site-menu,.search').click(function (e) {
 			e.stopPropagation();
 		});
 		$('.window-nav, .go-comment').on('click', scrolltoElement);

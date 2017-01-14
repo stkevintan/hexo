@@ -1,4 +1,4 @@
-title: Hexo折腾笔记（一）博客加速以及解决instantclick的兼容问题
+title: Hexo折腾笔记（一）博客加速以及instantclick的兼容
 date: 2015-02-25 20:18:23
 tags: [html,instantclick]
 categories: Hexo
@@ -41,7 +41,7 @@ if(typeof duoshuoQuery === 'undefined'){
         ds.type = 'text/javascript';ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
         ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
+        (document.getElementsByTagName('head')[0]
          || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 }

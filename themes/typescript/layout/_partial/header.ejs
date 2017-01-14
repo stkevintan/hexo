@@ -3,9 +3,22 @@
 		<a id="logo" href="/">
 			<%- config.title %>
 		</a>
-		<button id="site-nav-switch">
+		<button id="site-nav-switch" class="switcher">
 	    <span class="icon icon-menu"></span>
 	  </button>
+		<button class="switcher search-switch ">
+			<span class="icon icon-search"></span>
+		</button>
+		<% if (theme.search.enable === true) { %>
+			<div class="search">
+				<form name="searchform" id="searchform" class="u-search-form">
+					<input type="text" id="searchinput" class="u-search-input" placeholder="Looking for something?" />
+					<button type="submit" id="u-search-btn-submit" class="u-search-btn-submit">
+						<span class="icon icon-search"></span>
+					</button>
+				</form>
+			</div>
+		<% } %>
 	</div>
 	<aside id="site-menu">
   	<nav>

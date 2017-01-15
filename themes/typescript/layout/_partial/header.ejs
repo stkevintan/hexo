@@ -1,33 +1,42 @@
-<header id="header">
-	<div id="header-wrapper" class="clearfix">
-		<a id="logo" href="/">
-			<%- config.title %>
-		</a>
-		<button id="site-nav-switch" class="switcher">
-	    <span class="icon icon-menu"></span>
-	  </button>
-		<button class="switcher search-switch ">
-			<span class="icon icon-search"></span>
-		</button>
-		<% if (theme.search.enable === true) { %>
-			<div class="search">
-				<form name="searchform" id="searchform" class="u-search-form">
-					<input type="text" id="searchinput" class="u-search-input" placeholder="Looking for something?" />
-					<button type="submit" id="u-search-btn-submit" class="u-search-btn-submit">
-						<span class="icon icon-search"></span>
-					</button>
-				</form>
+<header class="m_header">
+		<div class="wrapper container">
+			<a class="logo" href="/">
+				<%- config.title %>
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					<li><a class='<%= is_home()?"active":""%>' href='/'>Home</a></li>
+					<li><a class='<%= is_archive()?"active":""%>' href='/archives'>Archives</a></li>
+					<li><a class='' href='/about'>About</a></li>
+					<li><a href='/photos'>Photos</a></li>
+				</ul>
+				<div class='underline'></div>
 			</div>
-		<% } %>
-	</div>
-	<aside id="site-menu">
-  	<nav>
-  		<% theme.navigation.forEach(function(value, key) {
-            if (value.url && value.slug && value.name) { %>
-        <a href="<%= value.url %>" class="nav-<%= value.slug %> nav">
-          <%= value.name %>
-        </a>
-      <% } }); %>
-    </nav>
-	</aside>
+			<ul class='switcher h-list'>
+				<% if (theme.search.enable === true) { %>
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search"></span></a></li>
+				<% } %>
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu"></span></a></li>
+			</ul>
+			<% if (theme.search.enable === true) { %>
+				<div class="m_search">
+					<form name="searchform" class="form">
+						<input type="text" class="input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			<% } %>
+		</div>
+		<aside class="menu-phone">
+			<nav>
+				<% theme.navigation.forEach(function(value, key) {
+							if (value.url && value.slug && value.name) { %>
+					<a href="<%= value.url %>" class="nav-<%= value.slug %> nav">
+						<%= value.name %>
+					</a>
+				<% } }); %>
+			</nav>
+		</aside>
 </header>
+
+

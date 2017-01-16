@@ -274,11 +274,17 @@ ul.h-list{
 
 .l_body{
   position:relative;
-  align-items: stretch;
   padding: 2 * @gap @gap @gap;
+  .container{
+    align-items: stretch;
+  }
+  
   @media(max-width: @on-phone){
-    display:block;
+    .container{
+      display:block;
+    }
     .l_side{
+      margin-top: @gap;
       margin-left:0;
       width:100%;
     }

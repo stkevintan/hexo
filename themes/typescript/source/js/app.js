@@ -10,14 +10,6 @@ var customSearch;
         correction = e.data ? e.data.correction ? e.data.correction : 0 : 0;
     $('html, body').animate({'scrollTop': $(self.attr('href')).offset().top - correction }, 400);
   };
-	
-	var openSearch = function() {
-		$('header').addClass('z_search-open');
-	}
-	
-	var closeSearch = function(e) {
-		$('header').removeClass('z_search-open');
-	}
 
 	function setHeaderMenu(){
 		var $headerMenu = $('header .menu');
@@ -52,15 +44,14 @@ var customSearch;
 	}
 	function setHeaderMenuPhone(){
 		var $switcher=$('.l_header .switcher .s-menu');
-		var $pmenu = $('.l_header .menu-phone');
 		$switcher.click(function(e){
 			e.stopPropagation();
 			$('body').toggleClass('z_menu-open');
-			$pmenu.toggleClass('active');
+			$switcher.toggleClass('active');
 		});
 		$(document).click(function(e){
 			$('body').removeClass('z_menu-open');
-			$pmenu.removeClass('active');
+			$switcher.removeClass('active');
 		});
 	}
 	function setHeaderSearch(){

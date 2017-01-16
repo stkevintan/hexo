@@ -69,6 +69,11 @@ search:
   path: search.xml
   field: post
 
+autoprefixer:
+  exclude:
+    - '*.min.css'
+  browsers:
+    - 'last 2 versions'
 # Generator json content
 jsonContent:
   meta: false

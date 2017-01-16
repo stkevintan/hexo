@@ -1,6 +1,5 @@
 .m_widget{
     &:extend(.z-depth-1);
-    max-width: @side-width;
     background: @white;
     margin-bottom: @gap;
     .header,.content{
@@ -26,6 +25,31 @@
     .waves-effect,img{
         width: 100%;
         display: block;
+    }
+    @media(max-width: @on-phone){
+        display:none;
+    }
+    .content{
+        padding:0;
+        #hitokoto{
+            position: relative;
+            padding: @gap;
+            background:fade(@black,4%);
+            .enable-trans(.15s);
+            &:before{
+                content:'';
+                position: absolute;
+                left:0;
+                top:0;
+                width:2px;
+                height:100%;
+                background:@secondary-color;
+            }
+            &:empty{
+                padding:0;
+                height: 0;
+            }
+        }
     }
 }
 .m_widget.categories{

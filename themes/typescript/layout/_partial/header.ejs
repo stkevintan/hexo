@@ -5,17 +5,21 @@
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<li><a class='flat-box <%= is_home()?"active":""%>' href='/'>Home</a></li>
-					<li><a class='flat-box <%= is_archive()?"active":""%>' href='/archives'>Archives</a></li>
-					<li><a class='flat-box <%= page.path.startsWith('about/') ? "active":"" %>' href='/about'>About</a></li>
-					<!--<li><a href='/photos'>Photos</a></li>-->
+					<% theme.navigation.forEach(function(value){ %>
+						<li>
+							<a class='flat-box <%=value.slug === page.current?"active":""%>' 
+									href='<%=value.url%>'>
+								<%=value.name%>
+							</a>
+						</li>
+					<%})%>
 				</ul>
 				<div class='underline'></div>
 			</div>
 			<% if (theme.search.enable === true) { %>
 				<div class="m_search">
-					<form name="searchform" class="form">
-						<input type="text" class="input" placeholder="Search" />
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<span class="icon icon-search"></span>
 					</form>
 				</div>

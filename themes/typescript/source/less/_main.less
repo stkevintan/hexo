@@ -28,10 +28,15 @@
 			margin-top: @gap;
 		}
 	}
-	.post-wrapper{
+	.post-wrapper,
+	.post-wrapper *{ // for firefox
 		-webkit-column-break-inside: avoid;
-					page-break-inside: avoid;
-							break-inside: avoid;
+		-moz-column-break-inside: avoid;
+		column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid-column;
+	}
+	.post-wrapper{
 		padding: @gap /2;
 		.post{
 			padding:1.5 * @gap @gap;
@@ -47,7 +52,7 @@
 	.post {
 		position: relative;
 		margin: 0 auto;
-		max-width:@post-max-width;
+		//max-width:@post-max-width;
 		position: relative;
 		padding: 2 * @gap 1.5*@gap;
 		background: white;

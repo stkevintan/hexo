@@ -4,14 +4,12 @@
   <article id="archive-page"
     class="post article white-box">
     <h2 class="title">
-      <a href="/archives">
         Archives
-      </a>
     </h2>
     <section class="archive">
       <%
         var year = -1, postid = -1;
-        page.posts.each(function(post) {
+        site.posts.sort('date').each(function(post) {
           post.year = date(post.date, 'YYYY');
           if (post.year && post.year !== year) {
             year = post.year;
@@ -31,7 +29,6 @@
       <% }); %>
     </section>
   </article>
-  
   <% if (page.total > 1) { %>
     <nav id="page-nav">
       <% if (page.prev != 0) { %>

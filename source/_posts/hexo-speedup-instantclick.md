@@ -15,10 +15,9 @@ Hexo加速可以有以下几个方面：
 3. 使用[InstantClick](http://instantclick.io/)。
 
 InstantClick是一款类似于[Turbolinks](http://instantclick.io/)的js库，利用[pjax](https://github.com/defunkt/jquery-pjax)（pushState and Ajax)技术对网站进行优化，能够极大的提高访问速度。
-
+<!--more-->
 ## 解决InstantClick的兼容问题
 InstantClick效果明显，但是副作用也大。加入它之后，原来相处无碍的Fancybox、百度分享、百度统计、 mathJax、多说评论都挂了。下面是我的解决方法：
-<!--more-->
 ###Fancybox
 Fancybox的修复首先要避面页面切换时jquery.fancybox.min.js文件的重复加载。可以将该js文件的引用放入head中或者加入data-no-instant属性。
 然后，因为instantclick在预加载时默认只替换body元素，所以在绑定fancybox的时候需要设置parent属性为body：

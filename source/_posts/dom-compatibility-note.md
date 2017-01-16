@@ -12,6 +12,7 @@ tags: [javascirpt,dom,html]
 2. add和remove方法不支持多参数
 3. SVG,MathML结点没有classList属性
 
+<!-- more -->
 ## Node种类
 ### Node.nodeName
 |Interface|nodeName|
@@ -20,7 +21,6 @@ tags: [javascirpt,dom,html]
 |Document|#document|
 |DocumentFragment|#document-fragment|
 
-<!--more-->
 ## Node的树遍历
 Node树遍历普遍要考虑空白文字结点。(whitespace textNode)。
 ### Node.childNodes

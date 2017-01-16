@@ -1,14 +1,15 @@
-.m_header {
+.l_header {
 	position:fixed;
 	z-index: 9999;
 	top:0;
 	left:0;
 	width:100%;
+	font-size: @header-font-size;
 	line-height: @header-height;
 	.wrapper{
 		height: @header-height;
 	}
-	background: @material-deep-blue;
+	background: @primary-color;
 	padding: 0 @gap;
 	&, a{
 		color: @white;
@@ -16,11 +17,13 @@
 	&:extend(.z-depth-1);
 	.logo {
 		flex: none;
+		padding: 0 @gap;
 		font-size: @header-logo-font-size;
 	}
 	.menu{
 		position:relative;
 		flex: 1 0 auto;
+		height: @header-height;
 		.enable-trans();
 		margin:0 48px;
 		ul > li > a{
@@ -47,7 +50,7 @@
 	}
 	.switcher{
 		display: none;
-		font-size: 30px;
+		font-size: @header-switcher-font-size;
 		& > li{
 			margin-left: @gap;
 			.enable-trans();
@@ -64,6 +67,7 @@
 			width:0;
 			overflow: hidden;
 			position: absolute;
+			.enable-trans();
 			right: 0px;
 			top:(@header-height - @search-height)/2;
 		}
@@ -102,13 +106,14 @@
 	}
 	.input {
 		display:block;
+		font-size: 14px;
+		line-height: @search-height - 10px;
 		margin: 0;
 		width: 100%;
 		color: @white;
-		padding: 0px 10px 0 40px;
+		padding: 5px 10px 5px 40px;
 		height: @search-height;
 		line-height: @search-height;
-		font-size: 14px;
 		font-family: @base-font-family;
 		border: none;
 		border-radius: 3px;
@@ -122,40 +127,43 @@
 		&:focus {
 			color:@black;
 			background: @white;
+			.set-placeholder({color: @black});
 		}
 		&:focus ~ .icon{
 			color: @black;
 		}
+		.set-placeholder({color: @white});
 	}
+	
 }
 
 .menu-phone{
 	position: absolute;
-  top: 69px;
-  right: 0;
+	top: @header-height;
+	right: 0;
 	width: 220px;
-  padding: 20px 0px;
-  background: white;
+	padding: @gap/2 0px;
+	line-height: 2 * @gap;
+	background: white;
 	border: 1px solid #e6e7e6;
 	border-right: 0;
-	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+	&:extend(.z-depth-1);
 	transform: translate3d(280px, 0, 0);
 	transition: all 0.24s ease;
 	visibility: hidden;
-  z-index: 2;
-  nav {
-	  .nav {
-		  position: relative;
-		  display: block;
-		  color: @black;
-		  font-size: 0.8125em;
-		  padding: 2px 20px;
-		  border-left: 3px solid transparent;
-
-		  &:hover {
-			  background: fade(lighten(#e1e2e3, 3%), 60%);
-			  border-color: @accent-color;
-		  }
-	  }
-  }
+	z-index: 2;
+	nav {
+		.nav {
+			position: relative;
+			display: block;
+			color: @black;
+			font-size: 0.8125em;
+			padding: 2px 20px;
+			border-left: 3px solid transparent;
+			&:hover {
+				background: fade(lighten(#e1e2e3, 3%), 60%);
+				border-color: @accent-color;
+			}
+		}
+  	}
 }

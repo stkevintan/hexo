@@ -3,23 +3,19 @@
   <%- partial('_partial/loading') %>
   <script>setLoadingBarProgress(20)</script> 
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-  <div id="site-wrapper">
     <script>setLoadingBarProgress(40);</script>
-
-    <main id="main" role="main">
-      <div class='side'>
-        <%- partial('_partial/side') %>
-      </div>
-      <div class='body'>
-        <%- body %>
-      </div>
-      
-      <script>setLoadingBarProgress(60);</script>
-    </main>
-
-    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
-    <script>setLoadingBarProgress(80);</script>
+  <div class="l_body container">
+    <div class='l_main'>
+      <%- body %>
+    </div>
+    <aside class='l_side'>
+      <%- partial('_partial/side') %>
+    </aside>
+    <script>setLoadingBarProgress(60);</script>
   </div>
+
+  <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+  <script>setLoadingBarProgress(80);</script>
   <%- partial('_partial/scripts') %>
   <script>setLoadingBarProgress(100);</script>
 </body>

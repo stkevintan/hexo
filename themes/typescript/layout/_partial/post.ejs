@@ -1,17 +1,18 @@
 <article class="post <%= (post.title) ? "" : "no-title" %>">
-
-  <% if (post.title) { %>
-  <h2 class="title">
-    <a href="<%- url_for(post.path) %>">
-      <%= post.title %>
-    </a>
-  </h2>
-  <% } %>
-  <time>
-    <%= date(post.date, 'MMM D, YYYY') %>
-  </time>
-  
-  <section class="content">
+  <section class="meta">
+    <% if (post.title) { %>
+    <h2 class="title">
+      <a href="<%- url_for(post.path) %>">
+        <%= post.title %>
+      </a>
+    </h2>
+    <% } %>
+    <time>
+      <%= date(post.date, 'MMM D, YYYY') %>
+    </time>
+		<%- partial('categories',{post:post}) %>
+  </section>
+  <section class="article typo">
 	  <%- post.excerpt || post.content %>
 
     <% if (post.excerpt) { %>
@@ -22,13 +23,10 @@
     
     <% if (post.tags && post.tags.length) { %>
 	  <div class="tags">
-      <%- list_tags(post.tags, {
-        show_count: false,
-        style: 'none',
-        separator: ''
-      }) %>
+      <% post.tags.each(function(item){ %>
+        <a href="<%- url_for(item.path) %>" class="float-btn"><%=item.name %></a>
+      <%})%>
 	  </div>
     <% } %>
-
   </section>
 </article>

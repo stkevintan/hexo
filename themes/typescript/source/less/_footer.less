@@ -2,28 +2,20 @@
   position: relative;
   padding: 20px;
   width: 100%;
-  max-width: 1300px;
+	color: @white;
   margin: 0px auto;
   font-size: 14px;
   overflow: hidden;
   text-align: center;
-  opacity: 0;
-  transform: translate3d(0px, -20px, 0px);
-  transition: all 0.4s ease;
-  z-index: 3;
-
-	&.loaded {
-		transform: translate3d(0px, 0px, 0px);
-		opacity: 1;
-	}
+	background: @black;
 	.codename {
-		color: @material-orange;
+		color: @secondary-color;
 	}
 	.social-wrapper {
 		padding-top: 20px;
 	}
   a {
-    color: @grey-color;
+    color: fade(@white,80%);
 
     &:hover {
       background: fade(@accent-color, 10%);

@@ -1,17 +1,22 @@
-.content {
+.article {
 	color: lighten(@black, 2%);
-  font-size: 1.8rem;
-  line-height: 1.75em;
-  padding: 0px 30px;
-
-  @media (max-width: @on-phone) {
-    padding: 0px 20px;
-    font-size:1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  em {
+  position: relative;
+    &:before{
+      position: absolute;
+      top: 0.65em;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      content: "・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・";
+    }
   }
 	img {
 		position: relative;
 		display: block;
-    max-width: 100%;
 		margin: 0 auto;
 		box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
 		background: white;
@@ -60,7 +65,7 @@
   h1, h2, h3, h4, h5, h6 {
 	  position: relative;
     font-family: @base-font-family;
-    font-weight: bold;
+    font-weight: normal;
     margin: 40px auto 30px auto;
     left: 20px;
 
@@ -72,7 +77,14 @@
 	    color: @material-green;
 	    font-weight: normal;
     }
+    &.title{
+      left: 0;
+      &:before{
+        content: none;
+      }
+    }
   }
+  
   figure {
     figcaption {
       span {
@@ -103,7 +115,7 @@
     font-size: 1em;
     margin: 20px 0px;
     padding: 10px 15px;
-    background: lighten(@background-color,5%);
+    background-color: @code-background-color;
     white-space: pre;
     overflow: auto;
 
@@ -132,9 +144,23 @@
   .highlight {
     width: 100%;
     margin: 20px 0px;
-    background: lighten(@background-color,5%);
+    background: @code-background-color;
     overflow: auto;
-
+    table tr{
+      border-bottom: none;
+      display:flex;
+      align-items: stretch;
+    }
+    table tr td,table tr th{
+      padding: 0;
+    }
+    .gutter{
+      flex:0 0 auto;
+      color:@grey-color;
+    }
+    .code{
+      flex:1 0 auto;
+    }
     figcaption {
       background: white;
       padding-bottom: 15px;
@@ -158,18 +184,22 @@
 	  margin-top: 50px;
 
 		a {
-			position: relative;
-			padding: 4px 10px 4px 20px;
-			margin-right: 5px;
+			// position: relative;
+			// padding: 4px 10px 4px 20px;
+			// margin-right: 5px;
+      .enable-trans(.15s);
 			font-size: 14px;
-			background: @background-color;
-			border-radius: 2px;
-			vertical-align: middle;
-			line-height: 1.75em;
+			background:@material-light-grey;
+			// border-radius: 2px;
+			// vertical-align: middle;
+			line-height: 30px;
 			color: @black;
-
+      padding: 0 1rem;
+      & + a{
+        margin-left: @gap /2;
+      }
 			&:hover {
-				background: @black;
+				background: @secondary-color;
 				color: white;
 			}
 			&::before {

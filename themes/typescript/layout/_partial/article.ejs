@@ -1,6 +1,7 @@
 <article id="<%= post.layout %>-<%= post.slug %>"
   class="post article white-box article-type-<%= post.layout %>"
   itemscope itemprop="blogPost">
+	<section class='meta'>
 	<h2 class="title">
   	<a href="<%- url_for(post.path) %>">
     	<%= post.title %>
@@ -9,7 +10,9 @@
 	<time>
 	  <%= date(post.date, 'MMM D, YYYY') %>
 	</time>
-	<section class="content">
+	<%- partial('categories',{post:post}) %>
+	</section>
+	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<%- post.content %>
   	</div>
@@ -24,10 +27,9 @@
       <% } %>
 	  </div>
 	</section>
+	<% if (post.comments && config.disqus_shortname){ %>
+		<section id="comments">
+			<div id="disqus_thread"></div>
+		</section>
+	<% } %>
 </article>
-
-<% if (post.comments && config.disqus_shortname){ %>
-<section id="comments">
-	<div id="disqus_thread"></div>
-</section>
-<% } %>

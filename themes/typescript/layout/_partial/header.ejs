@@ -1,23 +1,17 @@
-<header class="m_header">
+<header class="l_header">
 		<div class="wrapper container">
-			<a class="logo" href="/">
+			<a class="logo flat-box" href="/">
 				<%- config.title %>
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<li><a class='<%= is_home()?"active":""%>' href='/'>Home</a></li>
-					<li><a class='<%= is_archive()?"active":""%>' href='/archives'>Archives</a></li>
-					<li><a class='' href='/about'>About</a></li>
-					<li><a href='/photos'>Photos</a></li>
+					<li><a class='flat-box <%= is_home()?"active":""%>' href='/'>Home</a></li>
+					<li><a class='flat-box <%= is_archive()?"active":""%>' href='/archives'>Archives</a></li>
+					<li><a class='flat-box <%= page.path.startsWith('about/') ? "active":"" %>' href='/about'>About</a></li>
+					<!--<li><a href='/photos'>Photos</a></li>-->
 				</ul>
 				<div class='underline'></div>
 			</div>
-			<ul class='switcher h-list'>
-				<% if (theme.search.enable === true) { %>
-					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search"></span></a></li>
-				<% } %>
-				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu"></span></a></li>
-			</ul>
 			<% if (theme.search.enable === true) { %>
 				<div class="m_search">
 					<form name="searchform" class="form">
@@ -26,6 +20,12 @@
 					</form>
 				</div>
 			<% } %>
+			<ul class='switcher h-list'>
+				<% if (theme.search.enable === true) { %>
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search"></span></a></li>
+				<% } %>
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu"></span></a></li>
+			</ul>
 		</div>
 		<aside class="menu-phone">
 			<nav>

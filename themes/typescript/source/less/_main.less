@@ -1,29 +1,11 @@
-#main {
-	position: relative;
-	width: 100%;
-	margin: 0px auto;
-	padding: 0px 20px 20px;
-	.side{
-		width:300px;
-		float:right;
-	}	
-	.body{
-		padding-right: 300px + 20px;
-	}
-	@media (max-width: @on-phone){
-		.body{
-			padding-right: 0;
-		}
-		.side{
-			width: 100%;
-			float: none;
-		}
-	}
+.l_main {
+	flex:1 1 auto;
 	.post-list {
 		position: relative;
 		margin: 0px auto;
-		columns: 500px;
-		column-gap:20px;
+		columns: 400px;
+		column-gap:0;
+		margin: -@gap /2;
 	}
 	.page-header {
 		text-align: center;
@@ -38,161 +20,89 @@
 
 	#comments {
 		position: relative;
-		padding: 30px;
+		padding-top: 1.5*@gap;
+		margin-top: 1.5*@gap;
 		background: white;
-		box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
-
 		@media (max-width: @on-phone) {
-			padding: 20px;
-		}
-		&.page {
-			margin-top: 20px;
+			padding-top: @gap;
+			margin-top: @gap;
 		}
 	}
 	.post-wrapper{
 		-webkit-column-break-inside: avoid;
 					page-break-inside: avoid;
 							break-inside: avoid;
-		padding-bottom: 20px;
+		padding: @gap /2;
+		.post{
+			padding:1.5 * @gap @gap;
+			.meta{
+				margin-bottom:@gap;
+				text-align:left;
+				.title{
+					font-size: @article-title-size-sm;
+				}
+			}
+		}
 	}
 	.post {
 		position: relative;
 		margin: 0 auto;
+		max-width:@post-max-width;
 		position: relative;
-		padding: 40px 0px;
+		padding: 2 * @gap 1.5*@gap;
 		background: white;
 		&:extend(.z-depth-1);
-		//box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
 		&.no-title {
-			padding: 20px 0px;
-
-			> time {
+			padding: @gap 0px;
+			.meta > time {
 				text-align: left;
-				padding-left: 30px;
 				margin: 0;
-				@media (max-width: @on-phone) {
-					padding-left: 20px;
-				}
 			}
 		}
-		&.author-profile {
-			position: relative;
-			padding: 30px 20px;
-			height: auto;
-			text-align: center;
-			margin-bottom: 30px;
-			transition: all 0.24s ease;
-
-			@media (max-width: @on-phone) {
-				padding: 20px;
+		.meta{
+			text-align:center;
+			margin-bottom: 1.5*@gap;
+			@media(max-width: @on-phone){
+				margin-bottom: @gap;
 			}
-			.author-title,
-			.author-bio {
-				position: relative;
-				font-size: 1em;
-				z-index: 1;
-
-				span,
-				a {
-					display: inline-block;
-					background: rgba(0,0,0,0.5);
-					color: white;
-					padding: 5px 15px 7px 15px;
-					border-radius: 5px;
-					font-weight: 500;
-					letter-spacing: 1px;
+			.title {
+				left:0;
+				font-size: @article-title-size;
+				@media(max-width: @on-phone){
+					font-size: @article-title-size-sm;
 				}
-				a:hover {
-					color: @accent-color;
-					background: rgba(0,0,0,0.75);
-				}
-			}
-			.author-title {
-
+				&:before{content:none}
 				a {
-					font-size: 1.25em;
-
-					@media (max-width: @on-phone) {
-						font-size: 1.25em;
-						padding: 7px 20px;
+					display: inline;
+					line-height: 1.25;
+					font-weight: normal;
+					color: lighten(@black, 2%);
+					&:hover {
+						color: lighten(@material-green, 3%);
 					}
 				}
 			}
-			.author-avatar {
-				position: relative;
-				margin: 0px auto;
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-				overflow: hidden;
-				margin-bottom: 20px;
-				z-index: 1;
-
-				img {
-					display: block;
-					width: 100%;
-					height: 100%;
+			time,.cats{
+				display:inline-block;
+				font-size: .75em;
+			}
+			.cats{
+				&:before{
+					display: inline-block;
+					margin: 0 5px;
+					@border-width: 8px;
+					content: '';
+					border-top: @border-width/2 solid transparent;
+					border-bottom: @border-width/2 solid transparent;
+					border-left: @border-width solid @secondary-color;
+				}
+				a{
+					font-weight: bold;
+					color: @secondary-color;
 				}
 			}
-			.author-cover {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: @black;
-				z-index: 0;
-
-				.img {
-					display: block;
-					width: 100%;
-					height: 100%;
-					background-size: cover;
-				}
-			}
-		}
-		> .title {
-			display: block;
-			text-align: center;
-			font-size: 1.25em;
-			padding: 0px 20px;
-
-			@media (max-width: @on-phone) {
-				font-size: 1em;
-			}
-			a {
-				display: inline;
-				line-height: 1.25;
-				font-size:1.2em;
-				font-weight: normal;
-				color: lighten(@black, 2%);
-
-				&:hover {
-		      color: lighten(@material-green, 3%);
-		    }
-			}
-		}
-		> time {
-			display: block;
-			text-align: center;
-			color: lighten(@grey-color, 20%);
-			font-size: 0.75em;
-			margin-bottom: 30px;
-		}
-		.image {
-			position: relative;
-			width: 100%;
-			margin: 20px 0px;
-
-			a {
-				display: block;
-			}
-			img {
-				position: relative;
-				display: block;
-				width: 104%;
-				margin: 0 -2%;
-				box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+			time {
+				color: lighten(@grey-color, 20%);
 			}
 		}
 		.readmore {

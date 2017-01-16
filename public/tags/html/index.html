@@ -23,7 +23,9 @@
   
     <link rel="icon" href="/favicon.png">
   
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -33,51 +35,65 @@
 </head>
 
 <body>
-
-  <!--
-<div id="loading-bar-wrapper">
+  <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
--->
-<div id='loading-wrapper'>
-  <div id='loading'></div>
-</div>
 
-  <!--<script>setLoadingBarProgress(20)</script> -->
 
-  <div id="site-wrapper">
-
-    <header id="header">
-	<div id="header-wrapper" class="clearfix">
-		<a id="logo" href="/">
-			World of Forks
-		</a>
-		<button id="site-nav-switch">
-	    <span class="icon icon-menu"></span>
-	  </button>
-	</div>
-	<aside id="site-menu">
-  	<nav>
-  		
-        <a href="/" class="nav-home nav">
-          Home
-        </a>
-      
-        <a href="/about" class="nav-about nav">
-          About
-        </a>
-      
-        <a href="/archives" class="nav-archives nav">
-          Archives
-        </a>
-      
-    </nav>
-	</aside>
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+		<div class="wrapper container">
+			<a class="logo flat-box" href="/">
+				World of Forks
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					<li><a class='flat-box ' href='/'>Home</a></li>
+					<li><a class='flat-box ' href='/archives'>Archives</a></li>
+					<li><a class='flat-box active' href='/about'>About</a></li>
+					<!--<li><a href='/photos'>Photos</a></li>-->
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form">
+						<input type="text" class="input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu"></span></a></li>
+			</ul>
+		</div>
+		<aside class="menu-phone">
+			<nav>
+				
+					<a href="/" class="nav-home nav">
+						Home
+					</a>
+				
+					<a href="/about" class="nav-about nav">
+						About
+					</a>
+				
+					<a href="/archives" class="nav-archives nav">
+						Archives
+					</a>
+				
+			</nav>
+		</aside>
 </header>
 
-    <!--<script>setLoadingBarProgress(40);</script>-->
 
-    <main id="main" role="main">
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body container">
+    <div class='l_main'>
       
 	<section class="page-header tag">
     <h1>- <span>html</span> -</h1>
@@ -90,82 +106,76 @@
 
 <section class="post-list">
 	
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/11/02/dom-compatibility-note/">
+        JS DOM API分析
+      </a>
+    </h2>
+    
+    <time>
+      11月 2, 2016
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/Web/">Web</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2016/11/02/dom-compatibility-note/">
-      JS DOM API分析
-    </a>
-  </h2>
-  
-  <time>
-    11月 2, 2016
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <h2 id="Element-classList"><a href="#Element-classList" class="headerlink" title="Element.classList"></a>Element.classList</h2><p>返回DOMTokenList,IE version&gt;=10不完全支持。</p>
 <ol>
 <li>不支持classList.contains的第二个参数(force)</li>
 <li>add和remove方法不支持多参数</li>
 <li>SVG,MathML结点没有classList属性</li>
 </ol>
-<h2 id="Node种类"><a href="#Node种类" class="headerlink" title="Node种类"></a>Node种类</h2><h3 id="Node-nodeName"><a href="#Node-nodeName" class="headerlink" title="Node.nodeName"></a>Node.nodeName</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">Interface</th>
-<th style="text-align:left">nodeName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Comment</td>
-<td style="text-align:left">#comment</td>
-</tr>
-<tr>
-<td style="text-align:left">Document</td>
-<td style="text-align:left">#document</td>
-</tr>
-<tr>
-<td style="text-align:left">DocumentFragment</td>
-<td style="text-align:left">#document-fragment</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Node的树遍历"><a href="#Node的树遍历" class="headerlink" title="Node的树遍历"></a>Node的树遍历</h2><p>Node树遍历普遍要考虑空白文字结点。(whitespace textNode)。</p>
-<h3 id="Node-childNodes"><a href="#Node-childNodes" class="headerlink" title="Node.childNodes"></a>Node.childNodes</h3><p>返回一个NodeList，表示该结点的所有子结点，包括文字结点和注释，该NodeList里面全部是object，并没有string。可以使用ParentNode.children来获得所有纯Element结点集合。</p>
-<h3 id="Node-firstChild"><a href="#Node-firstChild" class="headerlink" title="Node.firstChild"></a>Node.firstChild</h3><p>返回结点的第一个子结点。可能是whitespace textNode。<br>可以使用Element.firstElementChild来获得Element结点。</p>
-<h3 id="Node-lastChild"><a href="#Node-lastChild" class="headerlink" title="Node.lastChild"></a>Node.lastChild</h3><p>返回结点的最后一个子结点。可能是whitespace textNode。<br>可以使用Element.lastElementChild来获得Element结点。</p>
-<h3 id="Node-nextSibling"><a href="#Node-nextSibling" class="headerlink" title="Node.nextSibling"></a>Node.nextSibling</h3><p>返回下一个兄弟结点，可能是whitespace textNode。可以使用Element.nextElementSibling获得Element结点。</p>
-<h3 id="Node-previousSibling"><a href="#Node-previousSibling" class="headerlink" title="Node.previousSibling"></a>Node.previousSibling</h3><p>返回前一个兄弟结点，可能whitespace textNode。可以使用Element.previousElementSibling获得Element结点。</p>
-<h2 id="Node-innerText"><a href="#Node-innerText" class="headerlink" title="Node.innerText"></a>Node.innerText</h2><p>是一个非标准的属性，返回当前结点包括其子结点的所有文字。可以使用标准方法Node.textContent代替。</p>
-<h2 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h2><h2 id="Node-parentElement"><a href="#Node-parentElement" class="headerlink" title="Node.parentElement"></a>Node.parentElement</h2><p>返回当前Node的父Element元素，如果没有父Element元素，返回null。</p>
-<h2 id="Node-parentNode"><a href="#Node-parentNode" class="headerlink" title="Node.parentNode"></a>Node.parentNode</h2><p>一个元素的parentNode可能是另一个元素、Document或者DocumentFragment。<br>Document和DocumentFragment的parentNode是null，同样，一个刚刚创建的node，如果还没有加到dom树里面，它的parentNode同样是null。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//移除某element：</span></div><div class="line">ele.parentNode.removeChild(ele);</div></pre></td></tr></table></figure></p>
 
-
+    
+	  <div class="readmore">
+      <a href="/2016/11/02/dom-compatibility-note/">Read More</a>
+    </div>
     
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/dom/">dom</a><a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/javascirpt/">javascirpt</a>
+      
+        <a href="/tags/javascirpt/" class="float-btn">javascirpt</a>
+      
+        <a href="/tags/dom/" class="float-btn">dom</a>
+      
+        <a href="/tags/html/" class="float-btn">html</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2015/02/25/hexo-lightum-enhance/">
+        Hexo折腾笔记（二）博客优化与定制
+      </a>
+    </h2>
+    
+    <time>
+      2月 25, 2015
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/Hexo/">Hexo</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2015/02/25/hexo-lightum-enhance/">
-      Hexo折腾笔记（二）博客优化与定制
-    </a>
-  </h2>
-  
-  <time>
-    2月 25, 2015
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <p>首先我使用的是由<a href="http://zipperary.com/">zippera</a>基于官方<a href="https://github.com/hexojs/hexo-theme-light">Light</a>主题改进而来的<a href="https://github.com/zippera/lightum">Lightum</a>主题,其他主题可能稍有出入。</p>
 <p>##速度优化<br>参考之前的文章：<a href="http://kevinsfork.info/2015/02/25/hexo-speedup-instantclick/">静态页面优化</a>。然后使用了<a href="https://github.com/gyk001/hexo-qiniu-sync">hexo-qiniu-sync</a>这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）</p>
 <p>对于处于body区域的script、style的引用尽可能的加入data-no-instant属性，避免InstantClick重复加载。</p>
@@ -180,26 +190,38 @@
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/美化/">美化</a>
+      
+        <a href="/tags/html/" class="float-btn">html</a>
+      
+        <a href="/tags/美化/" class="float-btn">美化</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2015/02/25/hexo-speedup-instantclick/">
+        Hexo折腾笔记（一）博客加速以及instantclick的兼容
+      </a>
+    </h2>
+    
+    <time>
+      2月 25, 2015
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/Hexo/">Hexo</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2015/02/25/hexo-speedup-instantclick/">
-      Hexo折腾笔记（一）博客加速以及instantclick的兼容
-    </a>
-  </h2>
-  
-  <time>
-    2月 25, 2015
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <p><del>首先，Gitcafe的国内速度已经够快了，加不加速其实没多大区别,只不过是闲的蛋疼而已。</del><br>Gitcafe无故page不更新，所以又换回了github。</p>
 <h2 id="Hexo加速"><a href="#Hexo加速" class="headerlink" title="Hexo加速"></a>Hexo加速</h2><p>Hexo加速可以有以下几个方面：</p>
 <ol>
@@ -207,8 +229,7 @@
 <li>使用<a href="https://github.com/FlashSoft/hexo-console-optimize">hexo optimize</a>压缩优化HTML、CSS、JS、Image资源。</li>
 <li>使用<a href="http://instantclick.io/">InstantClick</a>。</li>
 </ol>
-<p>InstantClick是一款类似于<a href="http://instantclick.io/">Turbolinks</a>的js库，利用<a href="https://github.com/defunkt/jquery-pjax">pjax</a>（pushState and Ajax)技术对网站进行优化，能够极大的提高访问速度。</p>
-<h2 id="解决InstantClick的兼容问题"><a href="#解决InstantClick的兼容问题" class="headerlink" title="解决InstantClick的兼容问题"></a>解决InstantClick的兼容问题</h2><p>InstantClick效果明显，但是副作用也大。加入它之后，原来相处无碍的Fancybox、百度分享、百度统计、 mathJax、多说评论都挂了。下面是我的解决方法：<br>
+<p>InstantClick是一款类似于<a href="http://instantclick.io/">Turbolinks</a>的js库，利用<a href="https://github.com/defunkt/jquery-pjax">pjax</a>（pushState and Ajax)技术对网站进行优化，能够极大的提高访问速度。<br>
 
     
 	  <div class="readmore">
@@ -218,26 +239,38 @@
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/instantclick/">instantclick</a>
+      
+        <a href="/tags/html/" class="float-btn">html</a>
+      
+        <a href="/tags/instantclick/" class="float-btn">instantclick</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2014/09/16/sublime-config-web/">
+        用Sublime Text 3 dev 做网页开发的配置
+      </a>
+    </h2>
+    
+    <time>
+      9月 16, 2014
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/IDE-Editor/">IDE/Editor</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2014/09/16/sublime-config-web/">
-      用Sublime Text 3 dev 做网页开发的配置
-    </a>
-  </h2>
-  
-  <time>
-    9月 16, 2014
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <p>文件：<a href="http://pan.baidu.com/s/1pJ7FVuz" target="_blank" rel="external">click here</a></p>
 
 
@@ -245,31 +278,76 @@
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/sublime-text/">sublime text</a>
+      
+        <a href="/tags/html/" class="float-btn">html</a>
+      
+        <a href="/tags/sublime-text/" class="float-btn">sublime text</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
 </section>
 
 
-      <!--<script>setLoadingBarProgress(60);</script>-->
-    </main>
+    </div>
+    <aside class='l_side'>
+      <section class='m_widget about'>
+<div class='header'>Kevinsfork</div>
+<img class='avatar waves-image' src='/images/avatar.jpg' />
+</section>
+<section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/ACM/"><div class='name'>ACM</div><div class='badget'>20</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/ASP-NET/"><div class='name'>ASP.NET</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Cloud-Computing/"><div class='name'>Cloud Computing</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/GFW/"><div class='name'>GFW</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Git/"><div class='name'>Git</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/IDE-Editor/"><div class='name'>IDE/Editor</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/KDE/"><div class='name'>KDE</div><div class='badget'>3</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Python/"><div class='name'>Python</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/WM/"><div class='name'>WM</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Web/"><div class='name'>Web</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Wine/"><div class='name'>Wine</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Xfce/"><div class='name'>Xfce</div><div class='badget'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
 
-    <footer id="footer" class="clearfix">
-  
-  
-	<div class="search">
-	  <form name="searchform" id="searchform" class="u-search-form">
-	    <input type="text" id="searchinput" class="u-search-input" placeholder="Looking for something?" />
-	    <button type="submit" id="u-search-btn-submit" class="u-search-btn-submit">
-	      <span class="icon icon-search"></span>
-	    </button>
-	  </form>
-	</div>
-	
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/tags/C/" style="font-size: 15px; color: #6b6b6b">C#</a> <a href="/tags/DE-WM/" style="font-size: 17px; color: #404040">DE/WM</a> <a href="/tags/DP/" style="font-size: 14px; color: #808080">DP</a> <a href="/tags/LCA/" style="font-size: 16px; color: #555">LCA</a> <a href="/tags/RMQ/" style="font-size: 14px; color: #808080">RMQ</a> <a href="/tags/asp-net-mvc4/" style="font-size: 15px; color: #6b6b6b">asp.net mvc4</a> <a href="/tags/dom/" style="font-size: 14px; color: #808080">dom</a> <a href="/tags/github/" style="font-size: 14px; color: #808080">github</a> <a href="/tags/gtk/" style="font-size: 14px; color: #808080">gtk</a> <a href="/tags/html/" style="font-size: 17px; color: #404040">html</a> <a href="/tags/instantclick/" style="font-size: 14px; color: #808080">instantclick</a> <a href="/tags/javascirpt/" style="font-size: 14px; color: #808080">javascirpt</a> <a href="/tags/linux/" style="font-size: 19px; color: #151515">linux</a> <a href="/tags/neutron/" style="font-size: 14px; color: #808080">neutron</a> <a href="/tags/openstack/" style="font-size: 14px; color: #808080">openstack</a> <a href="/tags/python/" style="font-size: 14px; color: #808080">python</a> <a href="/tags/shadowsocks/" style="font-size: 14px; color: #808080">shadowsocks</a> <a href="/tags/simplemembership/" style="font-size: 14px; color: #808080">simplemembership</a> <a href="/tags/sublime-text/" style="font-size: 14px; color: #808080">sublime text</a> <a href="/tags/tarjan/" style="font-size: 18px; color: #2b2b2b">tarjan</a> <a href="/tags/倍增/" style="font-size: 14px; color: #808080">倍增</a> <a href="/tags/只言片语/" style="font-size: 17px; color: #404040">只言片语</a> <a href="/tags/图论/" style="font-size: 20px; color: #000">图论</a> <a href="/tags/数论/" style="font-size: 19px; color: #151515">数论</a> <a href="/tags/暴力/" style="font-size: 16px; color: #555">暴力</a> <a href="/tags/树形DP/" style="font-size: 14px; color: #808080">树形DP</a> <a href="/tags/树的直径/" style="font-size: 14px; color: #808080">树的直径</a> <a href="/tags/桌面/" style="font-size: 14px; color: #808080">桌面</a> <a href="/tags/矩阵-暴力/" style="font-size: 14px; color: #808080">矩阵,暴力</a> <a href="/tags/组合/" style="font-size: 14px; color: #808080">组合</a> <a href="/tags/网络流/" style="font-size: 14px; color: #808080">网络流</a> <a href="/tags/美化/" style="font-size: 18px; color: #2b2b2b">美化</a>
+    </div>
+</div>
+
+
+    </aside>
+    <script>setLoadingBarProgress(60);</script>
+  </div>
+
+  <footer id="footer" class="clearfix">
 
 	<div class="social-wrapper">
   	
@@ -292,20 +370,14 @@
     
   </div>
   
-  <div>Theme <span class="codename">Typescript</span> designed by <a href="http://rakugaki.me/" target="_blank">Art Chen</a>.</div>
+  <div>Theme <span class="codename">MaterialFlow</span> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
   <div>&copy; <a href="/">World of Forks</a></div>
   
 </footer>
 
 
-    <!--<script>setLoadingBarProgress(80);</script>-->
-
-  </div>
-
-  <script>
-  document.getElementById('loading-wrapper').className='fade-out';
-</script>
-
+  <script>setLoadingBarProgress(80);</script>
+  
 <script>
   var disqus_shortname = 'kevinhome';
   
@@ -320,9 +392,7 @@
 
 
 <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
-
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
 <script src="/js/jquery.fitvids.js"></script>
 <script>
 	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
@@ -340,6 +410,6 @@
 <script src="/js/app.js"></script>
 
 
- <!-- <script>setLoadingBarProgress(100);</script>-->
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

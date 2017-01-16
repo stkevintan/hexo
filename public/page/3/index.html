@@ -23,7 +23,9 @@
   
     <link rel="icon" href="/favicon.png">
   
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -33,51 +35,65 @@
 </head>
 
 <body>
-
-  <!--
-<div id="loading-bar-wrapper">
+  <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
--->
-<div id='loading-wrapper'>
-  <div id='loading'></div>
-</div>
 
-  <!--<script>setLoadingBarProgress(20)</script> -->
 
-  <div id="site-wrapper">
-
-    <header id="header">
-	<div id="header-wrapper" class="clearfix">
-		<a id="logo" href="/">
-			World of Forks
-		</a>
-		<button id="site-nav-switch">
-	    <span class="icon icon-menu"></span>
-	  </button>
-	</div>
-	<aside id="site-menu">
-  	<nav>
-  		
-        <a href="/" class="nav-home nav">
-          Home
-        </a>
-      
-        <a href="/about" class="nav-about nav">
-          About
-        </a>
-      
-        <a href="/archives" class="nav-archives nav">
-          Archives
-        </a>
-      
-    </nav>
-	</aside>
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+		<div class="wrapper container">
+			<a class="logo flat-box" href="/">
+				World of Forks
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					<li><a class='flat-box ' href='/'>Home</a></li>
+					<li><a class='flat-box ' href='/archives'>Archives</a></li>
+					<li><a class='flat-box active' href='/about'>About</a></li>
+					<!--<li><a href='/photos'>Photos</a></li>-->
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form">
+						<input type="text" class="input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu"></span></a></li>
+			</ul>
+		</div>
+		<aside class="menu-phone">
+			<nav>
+				
+					<a href="/" class="nav-home nav">
+						Home
+					</a>
+				
+					<a href="/about" class="nav-about nav">
+						About
+					</a>
+				
+					<a href="/archives" class="nav-archives nav">
+						Archives
+					</a>
+				
+			</nav>
+		</aside>
 </header>
 
-    <!--<script>setLoadingBarProgress(40);</script>-->
 
-    <main id="main" role="main">
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body container">
+    <div class='l_main'>
       
 
 
@@ -86,19 +102,27 @@
 
 <section class="post-list">
 	
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2014/12/07/kde-to-mac/">
+        KDE的Mac向折腾指南
+      </a>
+    </h2>
+    
+    <time>
+      12月 7, 2014
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/KDE/">KDE</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2014/12/07/kde-to-mac/">
-      KDE的Mac向折腾指南
-    </a>
-  </h2>
-  
-  <time>
-    12月 7, 2014
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <p>惯例，先上图：</p>
 <p><a href="http://sforkw-wp.qiniudn.com/jae/uploads/2014/12/logo9.png"><img src="http://sforkw-wp.qiniudn.com/jae/uploads/2014/12/logo9-1024x575.png" alt="logo9"></a><br>
 
@@ -110,26 +134,40 @@
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/DE-WM/">DE/WM</a><a class="tag-link" href="/tags/linux/">linux</a><a class="tag-link" href="/tags/美化/">美化</a>
+      
+        <a href="/tags/linux/" class="float-btn">linux</a>
+      
+        <a href="/tags/美化/" class="float-btn">美化</a>
+      
+        <a href="/tags/DE-WM/" class="float-btn">DE/WM</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2014/11/28/man-man-de/">
+        (转)慢慢的，就没有了，就像从未存在过
+      </a>
+    </h2>
+    
+    <time>
+      11月 28, 2014
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/GFW/">GFW</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2014/11/28/man-man-de/">
-      (转)慢慢的，就没有了，就像从未存在过
-    </a>
-  </h2>
-  
-  <time>
-    11月 28, 2014
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <p>几年以前，我曾经嘲笑过某科技界大佬。当时他说：也许90后、95后会慢慢不知道谷歌是什么网站。</p>
 <p>　　那一年，这对于我来说简直就是世界上最好笑的笑话。谷歌，全世界最卓越的互联网公司，活在互联网的一代中国人，会不知道他们的网站？</p>
 <p>　　今天，我收回这句嘲笑。因为这件不可能的事，它慢慢变成了现实。</p>
@@ -144,26 +182,36 @@
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/只言片语/">只言片语</a>
+      
+        <a href="/tags/只言片语/" class="float-btn">只言片语</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2014/11/07/zoj-month-contest-d-determinant-and-matrix/">
+        ZOJ month contest D.Determinant and Matrix
+      </a>
+    </h2>
+    
+    <time>
+      11月 7, 2014
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/ACM/">ACM</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2014/11/07/zoj-month-contest-d-determinant-and-matrix/">
-      ZOJ month contest D.Determinant and Matrix
-    </a>
-  </h2>
-  
-  <time>
-    11月 7, 2014
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <hr>
 <center style="color: #000000;"><span style="color: green;">Time Limit: </span>2 Seconds      <span style="color: green;">Memory Limit: </span>65536 KB</center>
 
@@ -179,26 +227,36 @@
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/数论/">数论</a>
+      
+        <a href="/tags/数论/" class="float-btn">数论</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2014/11/06/fft-thoughts/">
+        FFT求快速卷积的思考
+      </a>
+    </h2>
+    
+    <time>
+      11月 6, 2014
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/ACM/">ACM</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2014/11/06/fft-thoughts/">
-      FFT求快速卷积的思考
-    </a>
-  </h2>
-  
-  <time>
-    11月 6, 2014
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <p>离散型卷积的定义是：$$y(n)=\sum_{m=0}^{n} x(m)h(n-m)$$</p>
 <p>注意，h函数是反转的。</p>
 <p>在Chipher Messages一题中，b串需要反转再与a串匹配。</p>
@@ -215,26 +273,38 @@
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/只言片语/">只言片语</a><a class="tag-link" href="/tags/数论/">数论</a>
+      
+        <a href="/tags/只言片语/" class="float-btn">只言片语</a>
+      
+        <a href="/tags/数论/" class="float-btn">数论</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
-    <article class="post ">
+    <div class='post-wrapper'>
+      <article class="post ">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2014/11/06/baylor6622-absurdistan-roads/">
+        baylor 6622 Absurdistan Roads（ NWERC Contest）
+      </a>
+    </h2>
+    
+    <time>
+      11月 6, 2014
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/ACM/">ACM</a>
+    </div>
 
-  
-  <h2 class="title">
-    <a href="/2014/11/06/baylor6622-absurdistan-roads/">
-      baylor 6622 Absurdistan Roads（ NWERC Contest）
-    </a>
-  </h2>
-  
-  <time>
-    11月 6, 2014
-  </time>
-  <section class="content">
+  </section>
+  <section class="article typo">
 	  <p>原题pdf：<a href="https://icpcarchive.ecs.baylor.edu/external/66/6622.pdf">click here</a></p>
 <p>##Description<br>The people of Absurdistan discovered how to build roads only last year. After the discovery, every city<br>decided to build their own road connecting their city with another city. Each newly built road can be<br>used in both directions.</p>
 <p>Absurdistan is full of surprising coincidences. It took all N cities precisely one year to build their<br>roads. And even more surprisingly, in the end it was possible to travel from every city to every other<br>city using the newly built roads.</p>
@@ -247,12 +317,14 @@
     
     
 	  <div class="tags">
-      <a class="tag-link" href="/tags/图论/">图论</a>
+      
+        <a href="/tags/图论/" class="float-btn">图论</a>
+      
 	  </div>
     
-
   </section>
 </article>
+    </div>
   
 </section>
 
@@ -273,21 +345,62 @@
   </nav>
   
 
-      <!--<script>setLoadingBarProgress(60);</script>-->
-    </main>
+    </div>
+    <aside class='l_side'>
+      <section class='m_widget about'>
+<div class='header'>Kevinsfork</div>
+<img class='avatar waves-image' src='/images/avatar.jpg' />
+</section>
+<section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/ACM/"><div class='name'>ACM</div><div class='badget'>20</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/ASP-NET/"><div class='name'>ASP.NET</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Cloud-Computing/"><div class='name'>Cloud Computing</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/GFW/"><div class='name'>GFW</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Git/"><div class='name'>Git</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/IDE-Editor/"><div class='name'>IDE/Editor</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/KDE/"><div class='name'>KDE</div><div class='badget'>3</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Python/"><div class='name'>Python</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/WM/"><div class='name'>WM</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Web/"><div class='name'>Web</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Wine/"><div class='name'>Wine</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Xfce/"><div class='name'>Xfce</div><div class='badget'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
 
-    <footer id="footer" class="clearfix">
-  
-  
-	<div class="search">
-	  <form name="searchform" id="searchform" class="u-search-form">
-	    <input type="text" id="searchinput" class="u-search-input" placeholder="Looking for something?" />
-	    <button type="submit" id="u-search-btn-submit" class="u-search-btn-submit">
-	      <span class="icon icon-search"></span>
-	    </button>
-	  </form>
-	</div>
-	
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/tags/C/" style="font-size: 15px; color: #6b6b6b">C#</a> <a href="/tags/DE-WM/" style="font-size: 17px; color: #404040">DE/WM</a> <a href="/tags/DP/" style="font-size: 14px; color: #808080">DP</a> <a href="/tags/LCA/" style="font-size: 16px; color: #555">LCA</a> <a href="/tags/RMQ/" style="font-size: 14px; color: #808080">RMQ</a> <a href="/tags/asp-net-mvc4/" style="font-size: 15px; color: #6b6b6b">asp.net mvc4</a> <a href="/tags/dom/" style="font-size: 14px; color: #808080">dom</a> <a href="/tags/github/" style="font-size: 14px; color: #808080">github</a> <a href="/tags/gtk/" style="font-size: 14px; color: #808080">gtk</a> <a href="/tags/html/" style="font-size: 17px; color: #404040">html</a> <a href="/tags/instantclick/" style="font-size: 14px; color: #808080">instantclick</a> <a href="/tags/javascirpt/" style="font-size: 14px; color: #808080">javascirpt</a> <a href="/tags/linux/" style="font-size: 19px; color: #151515">linux</a> <a href="/tags/neutron/" style="font-size: 14px; color: #808080">neutron</a> <a href="/tags/openstack/" style="font-size: 14px; color: #808080">openstack</a> <a href="/tags/python/" style="font-size: 14px; color: #808080">python</a> <a href="/tags/shadowsocks/" style="font-size: 14px; color: #808080">shadowsocks</a> <a href="/tags/simplemembership/" style="font-size: 14px; color: #808080">simplemembership</a> <a href="/tags/sublime-text/" style="font-size: 14px; color: #808080">sublime text</a> <a href="/tags/tarjan/" style="font-size: 18px; color: #2b2b2b">tarjan</a> <a href="/tags/倍增/" style="font-size: 14px; color: #808080">倍增</a> <a href="/tags/只言片语/" style="font-size: 17px; color: #404040">只言片语</a> <a href="/tags/图论/" style="font-size: 20px; color: #000">图论</a> <a href="/tags/数论/" style="font-size: 19px; color: #151515">数论</a> <a href="/tags/暴力/" style="font-size: 16px; color: #555">暴力</a> <a href="/tags/树形DP/" style="font-size: 14px; color: #808080">树形DP</a> <a href="/tags/树的直径/" style="font-size: 14px; color: #808080">树的直径</a> <a href="/tags/桌面/" style="font-size: 14px; color: #808080">桌面</a> <a href="/tags/矩阵-暴力/" style="font-size: 14px; color: #808080">矩阵,暴力</a> <a href="/tags/组合/" style="font-size: 14px; color: #808080">组合</a> <a href="/tags/网络流/" style="font-size: 14px; color: #808080">网络流</a> <a href="/tags/美化/" style="font-size: 18px; color: #2b2b2b">美化</a>
+    </div>
+</div>
+
+
+    </aside>
+    <script>setLoadingBarProgress(60);</script>
+  </div>
+
+  <footer id="footer" class="clearfix">
 
 	<div class="social-wrapper">
   	
@@ -310,20 +423,14 @@
     
   </div>
   
-  <div>Theme <span class="codename">Typescript</span> designed by <a href="http://rakugaki.me/" target="_blank">Art Chen</a>.</div>
+  <div>Theme <span class="codename">MaterialFlow</span> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
   <div>&copy; <a href="/">World of Forks</a></div>
   
 </footer>
 
 
-    <!--<script>setLoadingBarProgress(80);</script>-->
-
-  </div>
-
-  <script>
-  document.getElementById('loading-wrapper').className='fade-out';
-</script>
-
+  <script>setLoadingBarProgress(80);</script>
+  
 <script>
   var disqus_shortname = 'kevinhome';
   
@@ -338,9 +445,7 @@
 
 
 <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
-
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
 <script src="/js/jquery.fitvids.js"></script>
 <script>
 	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
@@ -358,6 +463,6 @@
 <script src="/js/app.js"></script>
 
 
- <!-- <script>setLoadingBarProgress(100);</script>-->
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

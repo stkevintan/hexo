@@ -23,7 +23,9 @@
   
     <link rel="icon" href="/favicon.png">
   
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -33,60 +35,274 @@
 </head>
 
 <body>
-
-  <!--
-<div id="loading-bar-wrapper">
+  <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
--->
-<div id='loading-wrapper'>
-  <div id='loading'></div>
-</div>
 
-  <!--<script>setLoadingBarProgress(20)</script> -->
 
-  <div id="site-wrapper">
-
-    <header id="header">
-	<div id="header-wrapper" class="clearfix">
-		<a id="logo" href="/">
-			World of Forks
-		</a>
-		<button id="site-nav-switch">
-	    <span class="icon icon-menu"></span>
-	  </button>
-	</div>
-	<aside id="site-menu">
-  	<nav>
-  		
-        <a href="/" class="nav-home nav">
-          Home
-        </a>
-      
-        <a href="/about" class="nav-about nav">
-          About
-        </a>
-      
-        <a href="/archives" class="nav-archives nav">
-          Archives
-        </a>
-      
-    </nav>
-	</aside>
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+		<div class="wrapper container">
+			<a class="logo flat-box" href="/">
+				World of Forks
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					<li><a class='flat-box ' href='/'>Home</a></li>
+					<li><a class='flat-box ' href='/archives'>Archives</a></li>
+					<li><a class='flat-box active' href='/about'>About</a></li>
+					<!--<li><a href='/photos'>Photos</a></li>-->
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form">
+						<input type="text" class="input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu"></span></a></li>
+			</ul>
+		</div>
+		<aside class="menu-phone">
+			<nav>
+				
+					<a href="/" class="nav-home nav">
+						Home
+					</a>
+				
+					<a href="/about" class="nav-about nav">
+						About
+					</a>
+				
+					<a href="/archives" class="nav-archives nav">
+						Archives
+					</a>
+				
+			</nav>
+		</aside>
 </header>
 
-    <!--<script>setLoadingBarProgress(40);</script>-->
 
-    <main id="main" role="main">
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body container">
+    <div class='l_main'>
       
   <article id="archive-page"
     class="post article white-box">
     <h2 class="title">
-      <a href="/archives">
         Archives
-      </a>
     </h2>
     <section class="archive">
+      
+            <h3 class="archive-item archive-year">
+              <a id="archive-year-2014" href="/archives/2014/">
+                2014
+              </a>
+            </h3>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/07/29/hdu4888-redraw-beautiful-drawings/">
+              <time>07-29</time>
+              <span class="title">HDU4888 Redraw Beautiful Drawings </span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/07/30/hdu4612-warm-up/">
+              <time>07-30</time>
+              <span class="title">HDU4612 Warm up</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/07/30/hdu4005-the-war/">
+              <time>07-30</time>
+              <span class="title">HDU4005 The war</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/07/31/2014-multi-university-training-contest-4/">
+              <time>07-31</time>
+              <span class="title">2014 Multi-University Training Contest 4</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/01/poj1330-nearest-common-ancestors/">
+              <time>08-01</time>
+              <span class="title">POJ1330 Nearest Common Ancestors</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/01/poj1989-distance-queries/">
+              <time>08-01</time>
+              <span class="title">POJ1989 Distance Queries</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/01/zjnu2073-geasscode/">
+              <time>08-01</time>
+              <span class="title">内网2073 城主GeassCode</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/10/github-tips/">
+              <time>08-10</time>
+              <span class="title">github使用札记</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/12/hdu4944-fsfs-game/">
+              <time>08-12</time>
+              <span class="title">HDU4944 FSF’s game</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/12/zjnu2082/">
+              <time>08-12</time>
+              <span class="title">内网2082 字母</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/13/zjnu2085/">
+              <time>08-13</time>
+              <span class="title">内网 2085马农</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/13/hdu-2874-connections-between-cities/">
+              <time>08-13</time>
+              <span class="title">HDU 2874 Connections between cities</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/14/herbustluftwm-config/">
+              <time>08-14</time>
+              <span class="title">我的HerbstluftWM</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/15/hdu-4945-2048/">
+              <time>08-15</time>
+              <span class="title">HDU 4945 2048</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/15/hdu-4952-number-transformation/">
+              <time>08-15</time>
+              <span class="title">HDU 4952 Number Transformation</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/08/19/hdu-4965-fast-matrix-calculation/">
+              <time>08-19</time>
+              <span class="title">HDU 4965 Fast Matrix Calculation</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/09/16/xfce4-config/">
+              <time>09-16</time>
+              <span class="title">我的xfce4配置</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/09/16/sublime-config-web/">
+              <time>09-16</time>
+              <span class="title">用Sublime Text 3 dev 做网页开发的配置</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/10/13/wine-font-config/">
+              <time>10-13</time>
+              <span class="title">优化Wine程序的字体显示</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/10/19/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/">
+              <time>10-19</time>
+              <span class="title">ACM International Collegiate Programming Contest Asia Regional Contest, Tokyo Problem D Space Golf</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/10/31/kde4-config/">
+              <time>10-31</time>
+              <span class="title">KDE4的配置参考</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/11/05/intro-of-fft/">
+              <time>11-05</time>
+              <span class="title">（转）关于卷积的一个血腥的讲解，看完给跪了</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/11/05/timus-1996-cipher-message-3-kmpfft/">
+              <time>11-05</time>
+              <span class="title">Timus 1996 Cipher Message 3 KMP+FFT求卷积</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/11/06/baylor6622-absurdistan-roads/">
+              <time>11-06</time>
+              <span class="title">baylor 6622 Absurdistan Roads（ NWERC Contest）</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/11/06/fft-thoughts/">
+              <time>11-06</time>
+              <span class="title">FFT求快速卷积的思考</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/11/07/zoj-month-contest-d-determinant-and-matrix/">
+              <time>11-07</time>
+              <span class="title">ZOJ month contest D.Determinant and Matrix</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/11/28/man-man-de/">
+              <time>11-28</time>
+              <span class="title">(转)慢慢的，就没有了，就像从未存在过</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2014/12/07/kde-to-mac/">
+              <time>12-07</time>
+              <span class="title">KDE的Mac向折腾指南</span>
+            </a>
+          </div>
       
             <h3 class="archive-item archive-year">
               <a id="archive-year-2015" href="/archives/2015/">
@@ -95,23 +311,9 @@
             </h3>
       
           <div class="archive-item archive-post">
-            <a href="/2015/02/25/hexo-speedup-instantclick/">
-              <time>02-25</time>
-              <span class="title">Hexo折腾笔记（一）博客加速以及instantclick的兼容</span>
-            </a>
-          </div>
-      
-          <div class="archive-item archive-post">
-            <a href="/2015/02/24/shadowsocks-account/">
-              <time>02-24</time>
-              <span class="title">Shadowsocks免费账号网址集</span>
-            </a>
-          </div>
-      
-          <div class="archive-item archive-post">
-            <a href="/2015/02/24/ASP-NET-MVC4note2/">
-              <time>02-24</time>
-              <span class="title">ASP.NET MVC 4笔记（二）</span>
+            <a href="/2015/02/14/show-kde4-again/">
+              <time>02-14</time>
+              <span class="title">再来晒晒我的KDE</span>
             </a>
           </div>
       
@@ -123,15 +325,69 @@
           </div>
       
           <div class="archive-item archive-post">
-            <a href="/2015/02/14/show-kde4-again/">
-              <time>02-14</time>
-              <span class="title">再来晒晒我的KDE</span>
+            <a href="/2015/02/24/ASP-NET-MVC4note2/">
+              <time>02-24</time>
+              <span class="title">ASP.NET MVC 4笔记（二）</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2015/02/24/shadowsocks-account/">
+              <time>02-24</time>
+              <span class="title">Shadowsocks免费账号网址集</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2015/02/25/hexo-speedup-instantclick/">
+              <time>02-25</time>
+              <span class="title">Hexo折腾笔记（一）博客加速以及instantclick的兼容</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2015/02/25/hexo-lightum-enhance/">
+              <time>02-25</time>
+              <span class="title">Hexo折腾笔记（二）博客优化与定制</span>
+            </a>
+          </div>
+      
+            <h3 class="archive-item archive-year">
+              <a id="archive-year-2016" href="/archives/2016/">
+                2016
+              </a>
+            </h3>
+      
+          <div class="archive-item archive-post">
+            <a href="/2016/10/28/neutron-code/">
+              <time>10-28</time>
+              <span class="title">neutron源码分析</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2016/11/02/dom-compatibility-note/">
+              <time>11-02</time>
+              <span class="title">JS DOM API分析</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2016/11/08/pygobject-tutorial-1/">
+              <time>11-08</time>
+              <span class="title">pygobject-tutorial-1</span>
+            </a>
+          </div>
+      
+          <div class="archive-item archive-post">
+            <a href="/2016/11/23/test-asset/">
+              <time>11-23</time>
+              <span class="title">测试asset</span>
             </a>
           </div>
       
     </section>
   </article>
-  
   
     <nav id="page-nav">
       
@@ -149,21 +405,62 @@
     </nav>
   
 
-      <!--<script>setLoadingBarProgress(60);</script>-->
-    </main>
+    </div>
+    <aside class='l_side'>
+      <section class='m_widget about'>
+<div class='header'>Kevinsfork</div>
+<img class='avatar waves-image' src='/images/avatar.jpg' />
+</section>
+<section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/ACM/"><div class='name'>ACM</div><div class='badget'>20</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/ASP-NET/"><div class='name'>ASP.NET</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Cloud-Computing/"><div class='name'>Cloud Computing</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/GFW/"><div class='name'>GFW</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Git/"><div class='name'>Git</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/IDE-Editor/"><div class='name'>IDE/Editor</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/KDE/"><div class='name'>KDE</div><div class='badget'>3</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Python/"><div class='name'>Python</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/WM/"><div class='name'>WM</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Web/"><div class='name'>Web</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Wine/"><div class='name'>Wine</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Xfce/"><div class='name'>Xfce</div><div class='badget'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
 
-    <footer id="footer" class="clearfix">
-  
-  
-	<div class="search">
-	  <form name="searchform" id="searchform" class="u-search-form">
-	    <input type="text" id="searchinput" class="u-search-input" placeholder="Looking for something?" />
-	    <button type="submit" id="u-search-btn-submit" class="u-search-btn-submit">
-	      <span class="icon icon-search"></span>
-	    </button>
-	  </form>
-	</div>
-	
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/tags/C/" style="font-size: 15px; color: #6b6b6b">C#</a> <a href="/tags/DE-WM/" style="font-size: 17px; color: #404040">DE/WM</a> <a href="/tags/DP/" style="font-size: 14px; color: #808080">DP</a> <a href="/tags/LCA/" style="font-size: 16px; color: #555">LCA</a> <a href="/tags/RMQ/" style="font-size: 14px; color: #808080">RMQ</a> <a href="/tags/asp-net-mvc4/" style="font-size: 15px; color: #6b6b6b">asp.net mvc4</a> <a href="/tags/dom/" style="font-size: 14px; color: #808080">dom</a> <a href="/tags/github/" style="font-size: 14px; color: #808080">github</a> <a href="/tags/gtk/" style="font-size: 14px; color: #808080">gtk</a> <a href="/tags/html/" style="font-size: 17px; color: #404040">html</a> <a href="/tags/instantclick/" style="font-size: 14px; color: #808080">instantclick</a> <a href="/tags/javascirpt/" style="font-size: 14px; color: #808080">javascirpt</a> <a href="/tags/linux/" style="font-size: 19px; color: #151515">linux</a> <a href="/tags/neutron/" style="font-size: 14px; color: #808080">neutron</a> <a href="/tags/openstack/" style="font-size: 14px; color: #808080">openstack</a> <a href="/tags/python/" style="font-size: 14px; color: #808080">python</a> <a href="/tags/shadowsocks/" style="font-size: 14px; color: #808080">shadowsocks</a> <a href="/tags/simplemembership/" style="font-size: 14px; color: #808080">simplemembership</a> <a href="/tags/sublime-text/" style="font-size: 14px; color: #808080">sublime text</a> <a href="/tags/tarjan/" style="font-size: 18px; color: #2b2b2b">tarjan</a> <a href="/tags/倍增/" style="font-size: 14px; color: #808080">倍增</a> <a href="/tags/只言片语/" style="font-size: 17px; color: #404040">只言片语</a> <a href="/tags/图论/" style="font-size: 20px; color: #000">图论</a> <a href="/tags/数论/" style="font-size: 19px; color: #151515">数论</a> <a href="/tags/暴力/" style="font-size: 16px; color: #555">暴力</a> <a href="/tags/树形DP/" style="font-size: 14px; color: #808080">树形DP</a> <a href="/tags/树的直径/" style="font-size: 14px; color: #808080">树的直径</a> <a href="/tags/桌面/" style="font-size: 14px; color: #808080">桌面</a> <a href="/tags/矩阵-暴力/" style="font-size: 14px; color: #808080">矩阵,暴力</a> <a href="/tags/组合/" style="font-size: 14px; color: #808080">组合</a> <a href="/tags/网络流/" style="font-size: 14px; color: #808080">网络流</a> <a href="/tags/美化/" style="font-size: 18px; color: #2b2b2b">美化</a>
+    </div>
+</div>
+
+
+    </aside>
+    <script>setLoadingBarProgress(60);</script>
+  </div>
+
+  <footer id="footer" class="clearfix">
 
 	<div class="social-wrapper">
   	
@@ -186,20 +483,14 @@
     
   </div>
   
-  <div>Theme <span class="codename">Typescript</span> designed by <a href="http://rakugaki.me/" target="_blank">Art Chen</a>.</div>
+  <div>Theme <span class="codename">MaterialFlow</span> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
   <div>&copy; <a href="/">World of Forks</a></div>
   
 </footer>
 
 
-    <!--<script>setLoadingBarProgress(80);</script>-->
-
-  </div>
-
-  <script>
-  document.getElementById('loading-wrapper').className='fade-out';
-</script>
-
+  <script>setLoadingBarProgress(80);</script>
+  
 <script>
   var disqus_shortname = 'kevinhome';
   
@@ -214,9 +505,7 @@
 
 
 <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
-
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
 <script src="/js/jquery.fitvids.js"></script>
 <script>
 	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
@@ -234,6 +523,6 @@
 <script src="/js/app.js"></script>
 
 
- <!-- <script>setLoadingBarProgress(100);</script>-->
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

@@ -1,12 +1,9 @@
+---
 title: KDE的Mac向折腾指南
 categories:
-
-- KDE
-
-id: 157
+- Linux
 date: 2014-12-07 12:45:53
-tags: [linux,DE/WM,美化]
-
+tags: [DE/WM]
 ---
 
 

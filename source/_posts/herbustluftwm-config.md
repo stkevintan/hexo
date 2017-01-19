@@ -1,8 +1,11 @@
+---
 title: 我的HerbstluftWM
-categories:
-  - WM
 date: 2014-08-14 20:04:50
-tags: [linux,桌面,美化]
+tags: 
+- DE/WM
+categories:
+- Linux
+    
 ---
 
 一直以来想折腾一下WM，但是又感觉麻烦。前天把笔记本带到机房就借此机会在虚拟机中玩了一下。发现事实上比我想像的要简单的多。少量配置了一下两个配置文件就能用了。然后使用compton做透明特效。看起来也挺简洁美观的。

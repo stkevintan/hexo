@@ -1,11 +1,12 @@
+---
 title: 我的xfce4配置
-categories:
-  - Xfce
 date: 2014-09-16 16:39:20
+categories:
+- Linux
+    
 tags:
-  - linux
-  - DE/WM
-
+- xfce4
+- DE/WM
 ---
 
 1.字体：infinally 渲染

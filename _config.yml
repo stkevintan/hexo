@@ -14,8 +14,8 @@ keywords:
   - Kevin Tan
   - kevinsfork
 author: Kevin Tan
-avatar: images/avatar.jpg
-favicon: images/favicon.ico
+avatar: /images/avatar.jpg
+favicon: /images/favicon.ico
 language: zh-CN
 timezone: Asia/Shanghai
 

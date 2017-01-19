@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="World of Forks">
 <meta property="og:description" content="基础这章将会介绍GTK+比较重要的几个方面
 主循环和信号就像大部分GUI库一样，GTK+使用了一种事件驱动的编程模型。当用户什么都没做，GTK+让主循环处于就绪状态并等待用户的输入。如果用户做了一些动作，比如鼠标事件，主循环就会被唤醒，然后将这个事件传递给GTK+程序。">
-<meta property="og:updated_time" content="2017-01-16T06:54:21.652Z">
+<meta property="og:updated_time" content="2017-01-16T11:32:58.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pygobject-tutorial-1">
 <meta name="twitter:description" content="基础这章将会介绍GTK+比较重要的几个方面
@@ -27,7 +27,6 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
@@ -52,17 +51,32 @@
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<li><a class='flat-box ' href='/'>Home</a></li>
-					<li><a class='flat-box ' href='/archives'>Archives</a></li>
-					<li><a class='flat-box active' href='/about'>About</a></li>
-					<!--<li><a href='/photos'>Photos</a></li>-->
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about' href='/about'>
+								About
+							</a>
+						</li>
+					
 				</ul>
 				<div class='underline'></div>
 			</div>
 			
 				<div class="m_search">
-					<form name="searchform" class="form">
-						<input type="text" class="input" placeholder="Search" />
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<span class="icon icon-search"></span>
 					</form>
 				</div>
@@ -81,12 +95,12 @@
 						Home
 					</a>
 				
-					<a href="/about" class="nav-about nav">
-						About
-					</a>
-				
 					<a href="/archives" class="nav-archives nav">
 						Archives
+					</a>
+				
+					<a href="/about" class="nav-about nav">
+						About
 					</a>
 				
 			</nav>
@@ -96,9 +110,10 @@
 
 
     <script>setLoadingBarProgress(40);</script>
-  <div class="l_body container">
-    <div class='l_main'>
-      <article id="post-pygobject-tutorial-1"
+  <div class="l_body">
+    <div class='container'>
+      <div class='l_main'>
+        <article id="post-pygobject-tutorial-1"
   class="post article white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
@@ -126,11 +141,14 @@
 
   	</div>
 	  
-	  <div class="article-tags tags">
-		  
-        <a class="tag-link" href="/tags/gtk/">gtk</a><a class="tag-link" href="/tags/python/">python</a>
+	  <div class="article-tags tags h-padding">
+      
+        <a href="/tags/python/">python</a>
+      
+        <a href="/tags/gtk/">gtk</a>
       
 	  </div>
+    
 	</section>
 	
 		<section id="comments">
@@ -139,11 +157,30 @@
 	
 </article>
 
-    </div>
-    <aside class='l_side'>
-      <section class='m_widget about'>
-<div class='header'>Kevinsfork</div>
+      </div>
+      <aside class='l_side'>
+        <section class='m_widget about'>
 <img class='avatar waves-image' src='/images/avatar.jpg' />
+<div class='header'>Kevinsfork</div>
+<div class='content'>
+<div id='hitokoto'></div>
+</div>
+</section>
+<section class='m_widget friendly-links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://ccoooss.com">
+            <div class='name'>老宋</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="http://frantic1048.logdown.com/">
+            <div class='name'>Frantic1048</div>
+        </a></li>
+    
+    </ul>
+</div>
 </section>
 <section class='m_widget categories'>
 <div class='header'>Categories</div>
@@ -190,10 +227,10 @@
 </div>
 
 
-    </aside>
-    <script>setLoadingBarProgress(60);</script>
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
   </div>
-
   <footer id="footer" class="clearfix">
 
 	<div class="social-wrapper">
@@ -218,13 +255,14 @@
   </div>
   
   <div>Theme <span class="codename">MaterialFlow</span> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
-  <div>&copy; <a href="/">World of Forks</a></div>
+  <div>Mail: <a href="mailto:stkevintan@zju.edu.cn" title="stkevintan@zju.edu.cn">stkevintan@zju.edu.cn</a></div>
   
 </footer>
 
 
   <script>setLoadingBarProgress(80);</script>
-  
+  <script type="text/javascript" src="//api.i-meto.com/hitokoto?encode=js-html" async defer></script> 
+
 <script>
   var disqus_shortname = 'kevinhome';
   

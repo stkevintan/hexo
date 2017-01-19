@@ -88,12 +88,12 @@ body {
 }
 
 ::-moz-selection {
-  background: fade(lighten(@material-orange, 15%), 70%);
+  background: fade(lighten(@accent-color, 15%), 70%);
   color: @black;
 }
 
 ::selection {
-  background: fade(lighten(@material-orange, 15%), 70%);
+  background: fade(lighten(@accent-color, 15%), 70%);
   color: @black;
 }
 
@@ -282,11 +282,6 @@ ul.h-list{
   @media(max-width: @on-phone){
     .container{
       display:block;
-    }
-    .l_side{
-      margin-top: @gap;
-      margin-left:0;
-      width:100%;
     }
     padding: @gap @gap/2 @gap/2;
   }

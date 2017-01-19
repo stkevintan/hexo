@@ -21,7 +21,7 @@
 兄弟两回到草原，将可以养马的区域，分为N*N的单位面积的正方形，并实地进行考察，归纳出了每个单位面积可以养马所获得的收益。接下来就要开始规划他们各自的马场了。
 首先，两人的马场都必须是矩形区域。同时，为了方便两人互相照应，也为了防止马匹互相走散，规定两个马场的矩形区域相邻，且只有一个交点。最后">
 <meta property="og:image" content="http://acm.zjnu.edu.cn/JudgeOnline/userfiles/images/2085.jpg">
-<meta property="og:updated_time" content="2017-01-16T01:58:03.973Z">
+<meta property="og:updated_time" content="2015-02-26T03:05:24.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内网 2085马农">
 <meta name="twitter:description" content="##Description 在观看完战马检阅之后，来自大草原的两兄弟决心成为超级“马农”，专门饲养战马。
@@ -32,7 +32,6 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
@@ -57,17 +56,32 @@
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<li><a class='flat-box ' href='/'>Home</a></li>
-					<li><a class='flat-box ' href='/archives'>Archives</a></li>
-					<li><a class='flat-box active' href='/about'>About</a></li>
-					<!--<li><a href='/photos'>Photos</a></li>-->
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about' href='/about'>
+								About
+							</a>
+						</li>
+					
 				</ul>
 				<div class='underline'></div>
 			</div>
 			
 				<div class="m_search">
-					<form name="searchform" class="form">
-						<input type="text" class="input" placeholder="Search" />
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<span class="icon icon-search"></span>
 					</form>
 				</div>
@@ -86,12 +100,12 @@
 						Home
 					</a>
 				
-					<a href="/about" class="nav-about nav">
-						About
-					</a>
-				
 					<a href="/archives" class="nav-archives nav">
 						Archives
+					</a>
+				
+					<a href="/about" class="nav-about nav">
+						About
 					</a>
 				
 			</nav>
@@ -101,9 +115,10 @@
 
 
     <script>setLoadingBarProgress(40);</script>
-  <div class="l_body container">
-    <div class='l_main'>
-      <article id="post-zjnu2085"
+  <div class="l_body">
+    <div class='container'>
+      <div class='l_main'>
+        <article id="post-zjnu2085"
   class="post article white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
@@ -149,11 +164,12 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;map&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;set&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;cmath&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;stack&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;queue&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;string&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;cstdio&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;vector&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;cctype&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;cassert&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;utility&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;numeric&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;cstring&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;iostream&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>&amp;lt;algorithm&amp;gt;</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> pr pair</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PR pair&amp;lt;int,int&amp;gt;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SI(x) set&amp;lt;x&amp;gt;::iterator</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> VI(x) vector&amp;lt;x&amp;gt;::iterator</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MI(x,y) map&amp;lt;x,y&amp;gt;::iterator</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SRI(x) set&amp;lt;x&amp;gt;::reverse_iterator</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> VRI(x) vector&amp;lt;x&amp;gt;::reverse_iterator</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MRI(x,y) map&amp;lt;x,y&amp;gt;::reverse_iterator</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> Sz(x) (int)x.size()</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> clrQ(x) while(!x.empty)x.pop();</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> clr(x,y) memset(x,y,sizeof(x));</span></div><div class="line"><span class="meta">#<span class="meta-keyword">if</span> defined (_WIN32) || defined (__WIN32) || defined (WIN32) || defined (__WIN32__)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL __int64</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LLS <span class="meta-string">"%"</span> <span class="meta-string">"I"</span> <span class="meta-string">"6"</span> <span class="meta-string">"4"</span> <span class="meta-string">"d"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LLU <span class="meta-string">"%"</span> <span class="meta-string">"I"</span> <span class="meta-string">"6"</span> <span class="meta-string">"4"</span> <span class="meta-string">"u"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL_MAX _I64_MAX</span></div><div class="line"><span class="meta">#<span class="meta-keyword">else</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LLS <span class="meta-string">"%"</span> <span class="meta-string">"l"</span> <span class="meta-string">"l"</span> <span class="meta-string">"d"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LLU <span class="meta-string">"%"</span> <span class="meta-string">"l"</span> <span class="meta-string">"l"</span> <span class="meta-string">"u"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL_MAX _I64_MAX</span></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = ~<span class="number">0u</span> &amp;gt;&amp;gt; <span class="number">1</span>;</div><div class="line"><span class="keyword">const</span> LL lnf = ~<span class="number">0u</span>ll &amp;gt;&amp;gt; <span class="number">1</span>;</div><div class="line"><span class="comment">/*start*/</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 55</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> M 2500000</span></div><div class="line"><span class="keyword">int</span> f[N][N],a[N][N];</div><div class="line"><span class="keyword">int</span> h[M&amp;lt;&amp;lt;<span class="number">1</span>|<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> st[N*N],top;</div><div class="line"><span class="keyword">int</span> n,m;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;amp;n))&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &amp;lt;= n; ++i) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &amp;lt;= n; ++j) &#123;</div><div class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;amp;a[i][j]);</div><div class="line">                f[i][j]=f[i<span class="number">-1</span>][j]+f[i][j<span class="number">-1</span>]-f[i<span class="number">-1</span>][j<span class="number">-1</span>]+a[i][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> res=top=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">1</span>; x &amp;lt;= n; ++x) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">1</span>; y &amp;lt;= n; ++y) &#123;</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &amp;lt;= x; ++i) &#123;</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &amp;lt;= y; ++j) &#123;</div><div class="line">                        st[top++]=f[x][y]-f[x][j<span class="number">-1</span>]-f[i<span class="number">-1</span>][y]+f[i<span class="number">-1</span>][j<span class="number">-1</span>]+M;</div><div class="line">                        h[st[top<span class="number">-1</span>]]++;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = x+<span class="number">1</span>; i &amp;lt;= n; ++i) &#123;</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = y+<span class="number">1</span>; j &amp;lt;= n; ++j) &#123;</div><div class="line">                        res+=h[f[i][j]-f[i][y]-f[x][j]+f[x][y]+M];</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="keyword">while</span>(top)&#123;</div><div class="line">                    h[st[--top]]=<span class="number">0</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &amp;lt;= n; ++i) &#123;</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &amp;lt;= y; ++j) &#123;</div><div class="line">                        st[top++]=f[i][y]-f[x<span class="number">-1</span>][y]-f[i][j<span class="number">-1</span>]+f[x<span class="number">-1</span>][j<span class="number">-1</span>]+M;</div><div class="line">                        h[st[top<span class="number">-1</span>]]++;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &amp;lt; x; ++i) &#123;</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = y+<span class="number">1</span>; j &amp;lt;= n; ++j) &#123;</div><div class="line">                        res+=h[f[x<span class="number">-1</span>][j]-f[x<span class="number">-1</span>][y]-f[i<span class="number">-1</span>][j]+f[i<span class="number">-1</span>][y]+M];</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">while</span>(top)&#123;</div><div class="line">                    h[st[--top]]=<span class="number">0</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,res);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   	</div>
 	  
-	  <div class="article-tags tags">
-		  
-        <a class="tag-link" href="/tags/暴力/">暴力</a>
+	  <div class="article-tags tags h-padding">
+      
+        <a href="/tags/暴力/">暴力</a>
       
 	  </div>
+    
 	</section>
 	
 		<section id="comments">
@@ -162,11 +178,30 @@
 	
 </article>
 
-    </div>
-    <aside class='l_side'>
-      <section class='m_widget about'>
-<div class='header'>Kevinsfork</div>
+      </div>
+      <aside class='l_side'>
+        <section class='m_widget about'>
 <img class='avatar waves-image' src='/images/avatar.jpg' />
+<div class='header'>Kevinsfork</div>
+<div class='content'>
+<div id='hitokoto'></div>
+</div>
+</section>
+<section class='m_widget friendly-links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://ccoooss.com">
+            <div class='name'>老宋</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="http://frantic1048.logdown.com/">
+            <div class='name'>Frantic1048</div>
+        </a></li>
+    
+    </ul>
+</div>
 </section>
 <section class='m_widget categories'>
 <div class='header'>Categories</div>
@@ -213,10 +248,10 @@
 </div>
 
 
-    </aside>
-    <script>setLoadingBarProgress(60);</script>
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
   </div>
-
   <footer id="footer" class="clearfix">
 
 	<div class="social-wrapper">
@@ -241,13 +276,14 @@
   </div>
   
   <div>Theme <span class="codename">MaterialFlow</span> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
-  <div>&copy; <a href="/">World of Forks</a></div>
+  <div>Mail: <a href="mailto:stkevintan@zju.edu.cn" title="stkevintan@zju.edu.cn">stkevintan@zju.edu.cn</a></div>
   
 </footer>
 
 
   <script>setLoadingBarProgress(80);</script>
-  
+  <script type="text/javascript" src="//api.i-meto.com/hitokoto?encode=js-html" async defer></script> 
+
 <script>
   var disqus_shortname = 'kevinhome';
   

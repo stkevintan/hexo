@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="World of Forks">
 <meta property="og:description" content="原题pdf：click here
 ##DescriptionThe people of Absurdistan discovered how to build roads only last year. After the discovery, every citydecided to build their own road connecting their city with another">
-<meta property="og:updated_time" content="2017-01-16T01:58:03.965Z">
+<meta property="og:updated_time" content="2015-02-26T02:43:52.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="baylor 6622 Absurdistan Roads（ NWERC Contest）">
 <meta name="twitter:description" content="原题pdf：click here
@@ -27,7 +27,6 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
@@ -52,17 +51,32 @@
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<li><a class='flat-box ' href='/'>Home</a></li>
-					<li><a class='flat-box ' href='/archives'>Archives</a></li>
-					<li><a class='flat-box active' href='/about'>About</a></li>
-					<!--<li><a href='/photos'>Photos</a></li>-->
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about' href='/about'>
+								About
+							</a>
+						</li>
+					
 				</ul>
 				<div class='underline'></div>
 			</div>
 			
 				<div class="m_search">
-					<form name="searchform" class="form">
-						<input type="text" class="input" placeholder="Search" />
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<span class="icon icon-search"></span>
 					</form>
 				</div>
@@ -81,12 +95,12 @@
 						Home
 					</a>
 				
-					<a href="/about" class="nav-about nav">
-						About
-					</a>
-				
 					<a href="/archives" class="nav-archives nav">
 						Archives
+					</a>
+				
+					<a href="/about" class="nav-about nav">
+						About
 					</a>
 				
 			</nav>
@@ -96,9 +110,10 @@
 
 
     <script>setLoadingBarProgress(40);</script>
-  <div class="l_body container">
-    <div class='l_main'>
-      <article id="post-baylor6622-absurdistan-roads"
+  <div class="l_body">
+    <div class='container'>
+      <div class='l_main'>
+        <article id="post-baylor6622-absurdistan-roads"
   class="post article white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
@@ -140,11 +155,12 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2010</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">1</span> &lt;&lt; <span class="number">25</span>;</div><div class="line"><span class="keyword">int</span> p[N];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ufind</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> x == p[x] ? x : p[x] = ufind(p[x]);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> fx = ufind(x);</div><div class="line">	<span class="keyword">int</span> fy = ufind(y);</div><div class="line">	<span class="keyword">if</span> (fx == fy)</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	p[fx] = fy;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">struct</span> Edge &#123;</div><div class="line">	<span class="keyword">int</span> u, v, w;</div><div class="line">	Edge(<span class="keyword">int</span> u = <span class="number">0</span>, <span class="keyword">int</span> v = <span class="number">0</span>, <span class="keyword">int</span> w = <span class="number">0</span>) :</div><div class="line">			u(u), v(v), w(w) &#123;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Edge&amp; othr) <span class="keyword">const</span> &#123;</div><div class="line">		<span class="keyword">return</span> w &lt; othr.w;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">vector</span>&lt;Edge&gt; vt;</div><div class="line"><span class="built_in">vector</span>&lt;Edge&gt; res;</div><div class="line"><span class="keyword">int</span> f[N][N];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">bool</span> first = <span class="literal">true</span>;</div><div class="line">	<span class="keyword">while</span> (~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n)) &#123;</div><div class="line">		vt.clear();</div><div class="line">		res.clear();</div><div class="line">		<span class="keyword">if</span> (!first) <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">		<span class="keyword">else</span> first = <span class="literal">false</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> x, j = <span class="number">1</span>; j &lt;= n; j++) &#123;</div><div class="line">				<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</div><div class="line">				<span class="keyword">if</span> (j &gt; i)</div><div class="line">					vt.push_back(Edge(i, j, x));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) p[i] = i;</div><div class="line">		sort(vt.begin(), vt.end());</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) fill(f[i]+<span class="number">1</span>,f[i]+<span class="number">1</span>+n,inf);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> cnt = <span class="number">0</span>, i = <span class="number">0</span>; i &lt; (<span class="keyword">int</span>) vt.size(); i++) &#123;</div><div class="line">			<span class="keyword">if</span> (Union(vt[i].u, vt[i].v)) &#123;</div><div class="line">				f[vt[i].u][vt[i].v] = vt[i].w;</div><div class="line">				f[vt[i].v][vt[i].u] = vt[i].w;</div><div class="line">				cnt++;</div><div class="line">				res.push_back(Edge(vt[i].u, vt[i].v, vt[i].w));</div><div class="line">				<span class="keyword">if</span> (cnt &gt;= n - <span class="number">1</span>) <span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</div><div class="line">					<span class="keyword">if</span> (f[i][k] == inf) <span class="keyword">break</span>;</div><div class="line">					<span class="keyword">if</span> (f[i][j] &gt; f[i][k] + f[k][j]) &#123;</div><div class="line">						f[i][j] = f[i][k] + f[k][j];</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> flag = <span class="literal">true</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="keyword">int</span>) vt.size(); i++) &#123;</div><div class="line">			Edge now = vt[i];</div><div class="line">			<span class="keyword">if</span> (f[now.u][now.v] != now.w) &#123;</div><div class="line">				res.push_back(Edge(now.u, now.v, now.w));</div><div class="line">				flag = <span class="literal">false</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (flag) res.push_back(res.back());</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="keyword">int</span>) res.size(); i++) &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>, res[i].u, res[i].v, res[i].w);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   	</div>
 	  
-	  <div class="article-tags tags">
-		  
-        <a class="tag-link" href="/tags/图论/">图论</a>
+	  <div class="article-tags tags h-padding">
+      
+        <a href="/tags/图论/">图论</a>
       
 	  </div>
+    
 	</section>
 	
 		<section id="comments">
@@ -153,11 +169,30 @@
 	
 </article>
 
-    </div>
-    <aside class='l_side'>
-      <section class='m_widget about'>
-<div class='header'>Kevinsfork</div>
+      </div>
+      <aside class='l_side'>
+        <section class='m_widget about'>
 <img class='avatar waves-image' src='/images/avatar.jpg' />
+<div class='header'>Kevinsfork</div>
+<div class='content'>
+<div id='hitokoto'></div>
+</div>
+</section>
+<section class='m_widget friendly-links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://ccoooss.com">
+            <div class='name'>老宋</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="http://frantic1048.logdown.com/">
+            <div class='name'>Frantic1048</div>
+        </a></li>
+    
+    </ul>
+</div>
 </section>
 <section class='m_widget categories'>
 <div class='header'>Categories</div>
@@ -204,10 +239,10 @@
 </div>
 
 
-    </aside>
-    <script>setLoadingBarProgress(60);</script>
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
   </div>
-
   <footer id="footer" class="clearfix">
 
 	<div class="social-wrapper">
@@ -232,13 +267,14 @@
   </div>
   
   <div>Theme <span class="codename">MaterialFlow</span> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
-  <div>&copy; <a href="/">World of Forks</a></div>
+  <div>Mail: <a href="mailto:stkevintan@zju.edu.cn" title="stkevintan@zju.edu.cn">stkevintan@zju.edu.cn</a></div>
   
 </footer>
 
 
   <script>setLoadingBarProgress(80);</script>
-  
+  <script type="text/javascript" src="//api.i-meto.com/hitokoto?encode=js-html" async defer></script> 
+
 <script>
   var disqus_shortname = 'kevinhome';
   

@@ -20,7 +20,7 @@ Problem Description
 <meta property="og:description" content="Time Limit: 10000/5000 MS (Java/Others)    Memory Limit: 65535/65535 K (Java/Others)Total Submission(s): 3532    Accepted Submission(s): 813
 Problem Description
 　 　N planets are connected by M bidirec">
-<meta property="og:updated_time" content="2017-01-16T01:58:03.969Z">
+<meta property="og:updated_time" content="2015-02-26T02:46:13.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU4612 Warm up">
 <meta name="twitter:description" content="Time Limit: 10000/5000 MS (Java/Others)    Memory Limit: 65535/65535 K (Java/Others)Total Submission(s): 3532    Accepted Submission(s): 813
@@ -30,7 +30,6 @@ Problem Description
   
     <link rel="icon" href="/favicon.png">
   
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
@@ -55,17 +54,32 @@ Problem Description
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<li><a class='flat-box ' href='/'>Home</a></li>
-					<li><a class='flat-box ' href='/archives'>Archives</a></li>
-					<li><a class='flat-box active' href='/about'>About</a></li>
-					<!--<li><a href='/photos'>Photos</a></li>-->
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about' href='/about'>
+								About
+							</a>
+						</li>
+					
 				</ul>
 				<div class='underline'></div>
 			</div>
 			
 				<div class="m_search">
-					<form name="searchform" class="form">
-						<input type="text" class="input" placeholder="Search" />
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<span class="icon icon-search"></span>
 					</form>
 				</div>
@@ -84,12 +98,12 @@ Problem Description
 						Home
 					</a>
 				
-					<a href="/about" class="nav-about nav">
-						About
-					</a>
-				
 					<a href="/archives" class="nav-archives nav">
 						Archives
+					</a>
+				
+					<a href="/about" class="nav-about nav">
+						About
 					</a>
 				
 			</nav>
@@ -99,9 +113,10 @@ Problem Description
 
 
     <script>setLoadingBarProgress(40);</script>
-  <div class="l_body container">
-    <div class='l_main'>
-      <article id="post-hdu4612-warm-up"
+  <div class="l_body">
+    <div class='container'>
+      <div class='l_main'>
+        <article id="post-hdu4612-warm-up"
   class="post article white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
@@ -141,11 +156,16 @@ Problem Description
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(linker, <span class="meta-string">"/STACK:1024000000,1024000000"</span>)<span class="comment">//C++加栈</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">if</span> defined (_WIN32) || defined (__WIN32) || defined (WIN32) || defined (__WIN32__)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL __int64</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LLS <span class="meta-string">"%"</span> <span class="meta-string">"I"</span> <span class="meta-string">"6"</span> <span class="meta-string">"4"</span> <span class="meta-string">"d"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LLU <span class="meta-string">"%"</span> <span class="meta-string">"I"</span> <span class="meta-string">"6"</span> <span class="meta-string">"4"</span> <span class="meta-string">"u"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL_MAX _I64_MAX</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">else</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LLS <span class="meta-string">"%"</span> <span class="meta-string">"l"</span> <span class="meta-string">"l"</span> <span class="meta-string">"d"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LLU <span class="meta-string">"%"</span> <span class="meta-string">"l"</span> <span class="meta-string">"l"</span> <span class="meta-string">"u"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL_MAX _I64_MAX</span></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200005</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> M 1000005</span></div><div class="line"><span class="keyword">int</span> n, m;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = ~<span class="number">0u</span> &amp;gt;&amp;gt; <span class="number">1</span>;</div><div class="line"><span class="keyword">const</span> LL lnf = ~<span class="number">0u</span>ll &amp;gt;&amp;gt; <span class="number">1</span>;</div><div class="line"><span class="keyword">struct</span> edge &#123;</div><div class="line">	<span class="keyword">int</span> v, nxt;</div><div class="line">&#125; e[M &amp;lt;&amp;lt; <span class="number">1</span>];</div><div class="line"><span class="keyword">struct</span> bridge &#123;</div><div class="line">	<span class="keyword">int</span> u, v;</div><div class="line">	bridge(<span class="keyword">int</span> u, <span class="keyword">int</span> v) &#123;</div><div class="line">		<span class="keyword">this</span>-&amp;gt;u = u;</div><div class="line">		<span class="keyword">this</span>-&amp;gt;v = v;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">int</span> pos, head[N];</div><div class="line"><span class="keyword">int</span> top, stk[N];</div><div class="line"><span class="keyword">int</span> pre[N], dfs_clock, belong[N], bcnt;</div><div class="line"><span class="built_in">vector</span> brg;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitEdge</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">memset</span>(head, <span class="number">-1</span>, <span class="keyword">sizeof</span>(head));</div><div class="line">	pos = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</div><div class="line">	e[pos].v = v;</div><div class="line">	e[pos].nxt = head[u];</div><div class="line">	head[u] = pos++;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> lowu = pre[u] = ++dfs_clock;</div><div class="line">	stk[top++] = u;</div><div class="line">	<span class="keyword">bool</span> vis = <span class="literal">true</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; ~i; i = e[i].nxt) &#123;</div><div class="line">		<span class="keyword">int</span> v = e[i].v;</div><div class="line">		<span class="keyword">if</span> (v == fa &amp;amp;&amp;amp; vis) &#123;</div><div class="line">			vis = <span class="literal">false</span>; <span class="comment">//u-v的反向边一定是v-u邻接表里的第一条边。</span></div><div class="line">			<span class="keyword">continue</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (!pre[v]) &#123;</div><div class="line">			<span class="keyword">int</span> lowv = dfs(v, u);</div><div class="line">			lowu = min(lowu, lowv);</div><div class="line">			<span class="keyword">if</span> (lowv &amp;gt; pre[u]) &#123; <span class="comment">//u-v为桥</span></div><div class="line">				brg.push_back(bridge(u, v));</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> lowu = min(lowu, pre[v]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (pre[u] == lowu) &#123;</div><div class="line">		bcnt++;</div><div class="line">		<span class="keyword">do</span> &#123;</div><div class="line">			belong[stk[--top]] = bcnt;</div><div class="line">		&#125; <span class="keyword">while</span> (stk[top] != u);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> lowu;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">()</span> </span>&#123;</div><div class="line">	top = bcnt = dfs_clock = <span class="number">0</span>;</div><div class="line">	<span class="built_in">memset</span>(pre, <span class="number">0</span>, <span class="keyword">sizeof</span>(pre));</div><div class="line">	<span class="built_in">memset</span>(belong, <span class="number">0</span>, <span class="keyword">sizeof</span>(belong));</div><div class="line">	brg.clear();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &amp;lt;= n; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (!pre[i]) dfs(i, <span class="number">-1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rebuild</span><span class="params">()</span> </span>&#123; <span class="comment">//根据桥来缩点重构图</span></div><div class="line">	InitEdge();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &amp;lt; (<span class="keyword">int</span>) brg.size(); i++) &#123;</div><div class="line">		<span class="keyword">int</span> u = belong[brg[i].u];</div><div class="line">		<span class="keyword">int</span> v = belong[brg[i].v];</div><div class="line">		add(u, v);</div><div class="line">		add(v, u);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> diameter = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">findR</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> h1 = <span class="number">0</span>, h2 = <span class="number">0</span>; <span class="comment">// 以u为根，h1最高的儿子，h2次高儿子。放在dfs里面两者不会重合。</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; ~i; i = e[i].nxt) &#123;</div><div class="line">		<span class="keyword">int</span> v = e[i].v;</div><div class="line">		<span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</div><div class="line">		<span class="keyword">int</span> h = findR(v, u) + <span class="number">1</span>; <span class="comment">//若路径有权重，则把1改为u-v的权重</span></div><div class="line">		<span class="keyword">if</span> (h &amp;gt; h1) h2 = h1, h1 = h;</div><div class="line">		<span class="keyword">else</span> h2 = max(h, h2);</div><div class="line">	&#125;</div><div class="line">	diameter = max(diameter, h1 + h2);</div><div class="line">	<span class="keyword">return</span> h1;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">tree_diameter</span><span class="params">()</span> </span>&#123;</div><div class="line">	diameter = <span class="number">0</span>;</div><div class="line">	findR(<span class="number">1</span>, <span class="number">-1</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;amp;n, &amp;amp;m), n || m) &#123;</div><div class="line">		<span class="keyword">int</span> u, v;</div><div class="line">		InitEdge();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &amp;lt; m; i++) &#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;amp;u, &amp;amp;v);</div><div class="line">			add(u, v);</div><div class="line">			add(v, u);</div><div class="line">		&#125;</div><div class="line">		tarjan();</div><div class="line">		rebuild();</div><div class="line">		tree_diameter();</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, bcnt - diameter - <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   	</div>
 	  
-	  <div class="article-tags tags">
-		  
-        <a class="tag-link" href="/tags/tarjan/">tarjan</a><a class="tag-link" href="/tags/图论/">图论</a><a class="tag-link" href="/tags/树的直径/">树的直径</a>
+	  <div class="article-tags tags h-padding">
+      
+        <a href="/tags/图论/">图论</a>
+      
+        <a href="/tags/tarjan/">tarjan</a>
+      
+        <a href="/tags/树的直径/">树的直径</a>
       
 	  </div>
+    
 	</section>
 	
 		<section id="comments">
@@ -154,11 +174,30 @@ Problem Description
 	
 </article>
 
-    </div>
-    <aside class='l_side'>
-      <section class='m_widget about'>
-<div class='header'>Kevinsfork</div>
+      </div>
+      <aside class='l_side'>
+        <section class='m_widget about'>
 <img class='avatar waves-image' src='/images/avatar.jpg' />
+<div class='header'>Kevinsfork</div>
+<div class='content'>
+<div id='hitokoto'></div>
+</div>
+</section>
+<section class='m_widget friendly-links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://ccoooss.com">
+            <div class='name'>老宋</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="http://frantic1048.logdown.com/">
+            <div class='name'>Frantic1048</div>
+        </a></li>
+    
+    </ul>
+</div>
 </section>
 <section class='m_widget categories'>
 <div class='header'>Categories</div>
@@ -205,10 +244,10 @@ Problem Description
 </div>
 
 
-    </aside>
-    <script>setLoadingBarProgress(60);</script>
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
   </div>
-
   <footer id="footer" class="clearfix">
 
 	<div class="social-wrapper">
@@ -233,13 +272,14 @@ Problem Description
   </div>
   
   <div>Theme <span class="codename">MaterialFlow</span> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
-  <div>&copy; <a href="/">World of Forks</a></div>
+  <div>Mail: <a href="mailto:stkevintan@zju.edu.cn" title="stkevintan@zju.edu.cn">stkevintan@zju.edu.cn</a></div>
   
 </footer>
 
 
   <script>setLoadingBarProgress(80);</script>
-  
+  <script type="text/javascript" src="//api.i-meto.com/hitokoto?encode=js-html" async defer></script> 
+
 <script>
   var disqus_shortname = 'kevinhome';
   

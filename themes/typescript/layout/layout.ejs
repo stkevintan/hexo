@@ -1,12 +1,3 @@
-<% 
-page.current = '';
-if(is_home()) page.current = 'home';
-else if(is_archive()) page.current = 'archives';
-else {
-  page.current = page.path.substring(0,page.path.indexOf('/'))||page.path;
-}
-%>
-
 <%- partial('_partial/head') %>
 <body>
   <%- partial('_partial/loading') %>

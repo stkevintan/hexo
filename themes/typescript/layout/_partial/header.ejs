@@ -7,8 +7,7 @@
 				<ul class='h-list'>
 					<% theme.navigation.forEach(function(value){ %>
 						<li>
-							<a class='flat-box <%=value.slug === page.current?"active":""%>' 
-									href='<%=value.url%>'>
+							<a class='flat-box nav-<%=value.slug%>' href='<%=value.url%>'>
 								<%=value.name%>
 							</a>
 						</li>

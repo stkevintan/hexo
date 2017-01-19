@@ -6,10 +6,16 @@ thumbnail: /images/about.jpg
 
 一个热衷于造轮子的少年，喜欢：
 - Python
-- 前端
+- Javascript
 - Go
 
 同时我也喜欢：
 - Doctor Who
 - Chopin && Rachmaninov
-- 霹雳布袋戏
+
+我的联系方式：
+
+- Telegram:  `@kevinsfork`
+- Github：   [stkevintan](https://github.com/stkevintan)
+- Twttier:   [Kevinsfork](https://twitter.com/kevinsfork)
+- Mail:      <stkevintan@zju.edu.cn>

@@ -20,7 +20,7 @@
 <meta property="og:description" content="首先我使用的是由zippera基于官方Light主题改进而来的Lightum主题,其他主题可能稍有出入。
 ##速度优化参考之前的文章：静态页面优化。然后使用了hexo-qiniu-sync这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）
 对于处于body区域的scr">
-<meta property="og:updated_time" content="2017-01-16T06:57:57.189Z">
+<meta property="og:updated_time" content="2015-03-01T04:22:54.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo折腾笔记（二）博客优化与定制">
 <meta name="twitter:description" content="首先我使用的是由zippera基于官方Light主题改进而来的Lightum主题,其他主题可能稍有出入。
@@ -30,7 +30,6 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
@@ -55,17 +54,32 @@
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<li><a class='flat-box ' href='/'>Home</a></li>
-					<li><a class='flat-box ' href='/archives'>Archives</a></li>
-					<li><a class='flat-box active' href='/about'>About</a></li>
-					<!--<li><a href='/photos'>Photos</a></li>-->
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about' href='/about'>
+								About
+							</a>
+						</li>
+					
 				</ul>
 				<div class='underline'></div>
 			</div>
 			
 				<div class="m_search">
-					<form name="searchform" class="form">
-						<input type="text" class="input" placeholder="Search" />
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<span class="icon icon-search"></span>
 					</form>
 				</div>
@@ -84,12 +98,12 @@
 						Home
 					</a>
 				
-					<a href="/about" class="nav-about nav">
-						About
-					</a>
-				
 					<a href="/archives" class="nav-archives nav">
 						Archives
+					</a>
+				
+					<a href="/about" class="nav-about nav">
+						About
 					</a>
 				
 			</nav>
@@ -99,9 +113,10 @@
 
 
     <script>setLoadingBarProgress(40);</script>
-  <div class="l_body container">
-    <div class='l_main'>
-      <article id="post-hexo-lightum-enhance"
+  <div class="l_body">
+    <div class='container'>
+      <div class='l_main'>
+        <article id="post-hexo-lightum-enhance"
   class="post article white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
@@ -147,10 +162,10 @@
 <p>在’\source\css_partial\article.styl’文件后添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.toc-article</div><div class="line">  float right</div><div class="line">   </div><div class="line">#toc</div><div class="line">  background #eee</div><div class="line">  margin 0 0 10px 20px</div><div class="line">  padding 12px</div><div class="line">  line-height 18px</div><div class="line">  font-size 10px</div><div class="line">  strong</div><div class="line">    font-size 15px</div><div class="line">  ol</div><div class="line">    margin-top 5px</div><div class="line">    margin-left 0</div><div class="line">  .toc</div><div class="line">    padding 0</div><div class="line">    li</div><div class="line">      list-style-type none</div><div class="line">  .toc-child</div><div class="line">    padding-left 20px</div></pre></td></tr></table></figure></p>
 <p>这样，我们就能在写文章的时候添加<code>toc: true</code>来启动文章导航功能。</p>
 <p>###扩展：浮动式导航<br>实现当页面滑动到下方时将文章导航浮动到屏幕右侧。</p>
-<p>在’\layout_partial\’里新建文件：<code>float_nav.ejs</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"menu-nav"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"title-nav"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">navigation</span>') %&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>→<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content-nav"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">%-</span> <span class="attr">toc</span>(<span class="attr">item.content</span>) %&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$, scrollSpeed, hiddenSpeed, fadeSpeed</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> T = $(<span class="string">'#toc'</span>);</div><div class="line">	<span class="keyword">var</span> M = $(<span class="string">'#menu-nav'</span>);</div><div class="line">	<span class="keyword">var</span> C = $(<span class="string">'#content-nav'</span>);</div><div class="line">	<span class="keyword">var</span> Tx = T.position().top;</div><div class="line">	$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> top = $(<span class="keyword">this</span>).scrollTop();</div><div class="line">		<span class="keyword">if</span> (top &gt;= Tx + <span class="number">300</span>) &#123;</div><div class="line">			M.stop().fadeIn(fadeSpeed);</div><div class="line">			T.stop().fadeTo(fadeSpeed, <span class="number">0</span>);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			M.stop().fadeOut(fadeSpeed);</div><div class="line">			T.stop().fadeTo(fadeSpeed, <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	$(<span class="string">'.toc-link'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		<span class="comment">//阻止默认跳转</span></div><div class="line">		e.preventDefault();</div><div class="line">		<span class="comment">//定义滚动动画</span></div><div class="line">		<span class="keyword">var</span> scrollTarget = $(<span class="string">'#'</span> + $(<span class="keyword">this</span>).children(<span class="string">'.toc-text'</span>).first().text());</div><div class="line">		$(<span class="string">"html,body"</span>).animate(&#123;</div><div class="line">			<span class="attr">scrollTop</span>: scrollTarget.prev().offset().top</div><div class="line">		&#125;, scrollSpeed);</div><div class="line">	&#125;);</div><div class="line">	C.click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		e.stopPropagation();</div><div class="line">	&#125;);</div><div class="line">	M.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		C.toggle(hiddenSpeed, <span class="string">'linear'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">var</span> T = $(<span class="string">'#title-nav div'</span>);</div><div class="line">			T.text() == <span class="string">'←'</span> ? T.text(<span class="string">'→'</span>) : T.text(<span class="string">'←'</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line">&#125;)(jQuery, <span class="number">500</span>, <span class="number">200</span>, <span class="number">100</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在’\layout_partial\’里新建文件：<code>float_nav.ejs</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"menu-nav"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"title-nav"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">navigation</span>') %&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>→<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content-nav"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">%-</span> <span class="attr">toc</span>(<span class="attr">item.content</span>) %&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$, scrollSpeed, hiddenSpeed, fadeSpeed</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> T = $(<span class="string">'#toc'</span>);</div><div class="line">	<span class="keyword">var</span> M = $(<span class="string">'#menu-nav'</span>);</div><div class="line">	<span class="keyword">var</span> C = $(<span class="string">'#content-nav'</span>);</div><div class="line">	<span class="keyword">var</span> Tx = T.position().top;</div><div class="line">	$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> top = $(<span class="keyword">this</span>).scrollTop();</div><div class="line">		<span class="keyword">if</span> (top &gt;= Tx + <span class="number">300</span>) &#123;</div><div class="line">			M.stop().fadeIn(fadeSpeed);</div><div class="line">			T.stop().fadeTo(fadeSpeed, <span class="number">0</span>);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			M.stop().fadeOut(fadeSpeed);</div><div class="line">			T.stop().fadeTo(fadeSpeed, <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	$(<span class="string">'.toc-link'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		<span class="comment">//阻止默认跳转</span></div><div class="line">		e.preventDefault();</div><div class="line">		<span class="comment">//定义滚动动画</span></div><div class="line">		<span class="keyword">var</span> scrollTarget = $(<span class="string">'#'</span> + $(<span class="keyword">this</span>).children(<span class="string">'.toc-text'</span>).first().text());</div><div class="line">		$(<span class="string">"html,body"</span>).animate(&#123;</div><div class="line">			scrollTop: scrollTarget.prev().offset().top</div><div class="line">		&#125;, scrollSpeed);</div><div class="line">	&#125;);</div><div class="line">	C.click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		e.stopPropagation();</div><div class="line">	&#125;);</div><div class="line">	M.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		C.toggle(hiddenSpeed, <span class="string">'linear'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">var</span> T = $(<span class="string">'#title-nav div'</span>);</div><div class="line">			T.text() == <span class="string">'←'</span> ? T.text(<span class="string">'→'</span>) : T.text(<span class="string">'←'</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line">&#125;)(jQuery, <span class="number">500</span>, <span class="number">200</span>, <span class="number">100</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>在’layout/_partial/article.ejs’中添加对其的引用：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(!<span class="attr">index</span> &amp;&amp; <span class="attr">item.toc</span>)&#123; %&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">float_nav</span>') %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure></p>
 <p>添加css样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">navbcolor=rgba(100, 100, 100, 0.74)</div><div class="line">#menu-nav</div><div class="line">  position fixed;</div><div class="line">  display none;</div><div class="line">  cursor pointer;</div><div class="line">  z-index 150;</div><div class="line">  right 0;</div><div class="line">  top 20%;</div><div class="line">  box-shadow 0 0 5px rgba(0, 0, 0, 0.15);</div><div class="line">  color white;</div><div class="line">  background navbcolor;</div><div class="line">  #title-nav</div><div class="line">    display inline-block;</div><div class="line">    vertical-align middle;</div><div class="line">    width: 30px;</div><div class="line">    height: 100%;</div><div class="line">    font-size: 16px;</div><div class="line">    text-align: center;</div><div class="line">    padding: 10px 0;</div><div class="line">  #content-nav</div><div class="line">    display inline-block;</div><div class="line">    vertical-align middle;</div><div class="line">    white-space:nowrap;</div><div class="line">    border-left: 1px dashed #ccc;</div><div class="line">    box-sizing border-box;</div><div class="line">    padding 15px;</div><div class="line">    line-height 18px;</div><div class="line">    font-size 10px;</div><div class="line">    li</div><div class="line">      list-style-type none;</div><div class="line">      width 100%;</div><div class="line">      a</div><div class="line">        display block;</div><div class="line">        box-sizing border-box;</div><div class="line">        color #FFFFFF;</div><div class="line">        &amp;:hover</div><div class="line">          background rgba(100, 100, 100, 1);</div><div class="line">      .toc-child a</div><div class="line">        padding-left 20px;</div></pre></td></tr></table></figure></p>
-<p>###添加”返回顶部”<br>与上一节相似，在’layout/_widget/‘中添加<code>totop.ejs</code>文件：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"to-top"</span>&gt;</span>↑<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$, scrollSpeed, fadeSpeed</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> T = $(<span class="string">'#to-top'</span>);</div><div class="line">	$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> top = $(<span class="keyword">this</span>).scrollTop();</div><div class="line">		<span class="keyword">if</span> (top &gt;= <span class="number">300</span>) &#123;</div><div class="line">			T.stop().fadeIn(fadeSpeed);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			T.stop().fadeOut(fadeSpeed);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	T.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		$(<span class="string">"html,body"</span>).animate(&#123;</div><div class="line">			<span class="attr">scrollTop</span>: <span class="number">0</span></div><div class="line">		&#125;, scrollSpeed);</div><div class="line">	&#125;);</div><div class="line">&#125;)(jQuery, <span class="number">500</span>, <span class="number">200</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>###添加”返回顶部”<br>与上一节相似，在’layout/_widget/‘中添加<code>totop.ejs</code>文件：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"to-top"</span>&gt;</span>↑<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$, scrollSpeed, fadeSpeed</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> T = $(<span class="string">'#to-top'</span>);</div><div class="line">	$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> top = $(<span class="keyword">this</span>).scrollTop();</div><div class="line">		<span class="keyword">if</span> (top &gt;= <span class="number">300</span>) &#123;</div><div class="line">			T.stop().fadeIn(fadeSpeed);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			T.stop().fadeOut(fadeSpeed);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	T.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		$(<span class="string">"html,body"</span>).animate(&#123;</div><div class="line">			scrollTop: <span class="number">0</span></div><div class="line">		&#125;, scrollSpeed);</div><div class="line">	&#125;);</div><div class="line">&#125;)(jQuery, <span class="number">500</span>, <span class="number">200</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>在’lightum/_config.yml’中启用该挂件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">widgets:</div><div class="line">- totop</div></pre></td></tr></table></figure></p>
 <p>添加css样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#to-top</div><div class="line">  background navbcolor;</div><div class="line">  position fixed;</div><div class="line">  display none;</div><div class="line">  z-index 200;</div><div class="line">  right 40px;</div><div class="line">  bottom 10%;</div><div class="line">  box-shadow 0 0 5px rgba(0, 0, 0, 0.15);</div><div class="line">  font-size 14px;</div><div class="line">  color white;</div><div class="line">  padding 5px 15px;</div><div class="line">  cursor pointer;</div><div class="line">  font-size 12px;</div><div class="line">  text-align center;</div><div class="line">  &amp;:hover</div><div class="line">    background rgba(100,100,100,1);</div></pre></td></tr></table></figure></p>
 <p>##参考</p>
@@ -162,11 +177,14 @@
 
   	</div>
 	  
-	  <div class="article-tags tags">
-		  
-        <a class="tag-link" href="/tags/html/">html</a><a class="tag-link" href="/tags/美化/">美化</a>
+	  <div class="article-tags tags h-padding">
+      
+        <a href="/tags/html/">html</a>
+      
+        <a href="/tags/美化/">美化</a>
       
 	  </div>
+    
 	</section>
 	
 		<section id="comments">
@@ -175,11 +193,30 @@
 	
 </article>
 
-    </div>
-    <aside class='l_side'>
-      <section class='m_widget about'>
-<div class='header'>Kevinsfork</div>
+      </div>
+      <aside class='l_side'>
+        <section class='m_widget about'>
 <img class='avatar waves-image' src='/images/avatar.jpg' />
+<div class='header'>Kevinsfork</div>
+<div class='content'>
+<div id='hitokoto'></div>
+</div>
+</section>
+<section class='m_widget friendly-links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://ccoooss.com">
+            <div class='name'>老宋</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="http://frantic1048.logdown.com/">
+            <div class='name'>Frantic1048</div>
+        </a></li>
+    
+    </ul>
+</div>
 </section>
 <section class='m_widget categories'>
 <div class='header'>Categories</div>
@@ -226,10 +263,10 @@
 </div>
 
 
-    </aside>
-    <script>setLoadingBarProgress(60);</script>
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
   </div>
-
   <footer id="footer" class="clearfix">
 
 	<div class="social-wrapper">
@@ -254,13 +291,14 @@
   </div>
   
   <div>Theme <span class="codename">MaterialFlow</span> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
-  <div>&copy; <a href="/">World of Forks</a></div>
+  <div>Mail: <a href="mailto:stkevintan@zju.edu.cn" title="stkevintan@zju.edu.cn">stkevintan@zju.edu.cn</a></div>
   
 </footer>
 
 
   <script>setLoadingBarProgress(80);</script>
-  
+  <script type="text/javascript" src="//api.i-meto.com/hitokoto?encode=js-html" async defer></script> 
+
 <script>
   var disqus_shortname = 'kevinhome';
   

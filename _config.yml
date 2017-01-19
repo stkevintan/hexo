@@ -109,6 +109,13 @@ jsonContent:
     categories: false
     tags: false
 
+
+links:
+ - name: 老宋
+   url: https://ccoooss.com
+ - name: Frantic1048
+   url: http://frantic1048.logdown.com/
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

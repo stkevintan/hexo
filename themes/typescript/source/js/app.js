@@ -13,13 +13,13 @@ var customSearch;
 
 	function setHeaderMenu(){
 		var $headerMenu = $('header .menu');
-		var $currentItem = $headerMenu.find('li a.active');
 		var $underline = $headerMenu.find('.underline');
 		function setUnderline($item,transition){
-			$item = $item || $currentItem;
+			$item = $item || $headerMenu.find('li a.active');//get instant
 			transition = transition===undefined?true:!!transition;
 			if(!transition) $underline.addClass('disable-trans');
-			if($item.length){
+			if($item && $item.length){
+				$item.addClass('active').siblings().removeClass('active');
 				$underline.css({
 					left:  $item.position().left,
 					width: $item.innerWidth()
@@ -40,7 +40,17 @@ var customSearch;
 		$headerMenu.on('mouseout',function(){
 			setUnderline();
 		});
-		setUnderline(null,false);
+		//set current active nav
+		var $active_link=null;
+		if(location.pathname==='/'||location.pathname.startsWith('/page/')){
+			$active_link=$('.nav-home',$headerMenu);
+		}else{
+			var name=location.pathname.match(/\/(.*?)\//);
+			if(name.length > 1){
+				$active_link=$('.nav-'+name[1],$headerMenu);
+			}
+		}
+		setUnderline($active_link,false);
 	}
 	function setHeaderMenuPhone(){
 		var $switcher=$('.l_header .switcher .s-menu');

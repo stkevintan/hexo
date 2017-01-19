@@ -2,3 +2,6 @@
 .bak*
 node_modules/
 design/
+deploy/
+public/
+.vscode/

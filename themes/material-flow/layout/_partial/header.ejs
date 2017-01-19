@@ -5,7 +5,7 @@
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<% theme.navigation.forEach(function(value){ %>
+					<% (site.data.menu||[]).forEach(function(value){ %>
 						<li>
 							<a class='flat-box nav-<%=value.slug%>' href='<%=value.url%>'>
 								<%=value.name%>
@@ -32,7 +32,7 @@
 		</div>
 		<aside class="menu-phone">
 			<nav>
-				<% theme.navigation.forEach(function(value, key) {
+				<% (site.data.menu||[]).forEach(function(value, key) {
 							if (value.url && value.slug && value.name) { %>
 					<a href="<%= value.url %>" class="nav-<%= value.slug %> nav">
 						<%= value.name %>

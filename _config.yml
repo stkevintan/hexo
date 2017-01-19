@@ -5,14 +5,23 @@
 # Site
 title: World of Forks
 subtitle: Kevin's Home
-description: A blog of stkevintan
+description: A blog of Kevin Tan
+keywords:
+  - blog
+  - stkevintan
+  - IT
+  - Web Front End
+  - Kevin Tan
+  - kevinsfork
 author: Kevin Tan
+avatar: images/avatar.jpg
+favicon: images/favicon.ico
 language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://kntan.coding.me
+url: http://keyin.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -64,7 +73,7 @@ disqus_shortname: kevinhome
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: typescript
+theme: material-flow
 search:
   path: search.xml
   field: post
@@ -109,13 +118,12 @@ jsonContent:
     categories: false
     tags: false
 
-
-links:
- - name: 老宋
-   url: https://ccoooss.com
- - name: Frantic1048
-   url: http://frantic1048.logdown.com/
-
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

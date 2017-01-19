@@ -1,12 +1,6 @@
-Frantic:
-  link: 'https://frantic1048.com/'
-  avatar: 'https://avatars1.githubusercontent.com/u/3102803?v=3&s=460'
-  descr: '前端菊聚'
-Farseerfc:
-  link: 'https://farseerfc.me/'
-  avatar: 'https://farseerfc.me/images/avatar.jpg'
-KK:
-  link: 'https://ikk.me/'
-Hclmaster:
-  link: 'http://hclmaster.github.io/'
-  avatar: 'http://hclmaster.github.io/uploads/huiyuan.png'
+- name: 老宋
+  url: https://ccoooss.com
+- name: Frantic1048
+  url: http://frantic1048.logdown.com/
+- name: Hclmaster
+  url: http://hclmaster.github.io/

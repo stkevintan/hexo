@@ -23,8 +23,6 @@ less:
 
 # use url, not username
 social:
-- slug: email
-  url: #mailto:stkevintan@zju.edu.cn
 - slug: github
   url: https://github.com/stkevintan
 - slug: twitter

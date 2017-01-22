@@ -30,13 +30,15 @@ mv ~/.meow/rc ~/.meow/rc.bak
 xclip -o -sel clipboard > ~/.meow/rc
 ```
 
+<!-- more -->
+
 运行
 
 ```
 MEOW
 ```
 
-<!-- more -->
+
 
 ## Hostname
 

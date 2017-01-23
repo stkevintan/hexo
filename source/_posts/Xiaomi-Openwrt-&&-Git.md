@@ -20,7 +20,7 @@ mtd -r write /tmp/PandoraBox.bin firmware
 
 > 從爬文中得知，小米路由器Mini 官方韌體是雙系統，由於 ROM 有16MB，官方韌體都小於8MB，所以會有一份備援系統（8MB+8MB），因此如果刷了大於 8MB 的第三方韌體的話，會覆蓋掉第二個分區的系統，導致未來刷回官方韌體時會有掉 SN 的問題，而且再也無法刷入 SSH，從此以後就只能乖乖用官方韌體，再也不能玩刷機，目前新版的 PandoraBox 韌體大約都在 10MB 左右，所以刷機還真要有點決心，除非完整備份小米路由器Mini 中所有分區的資料，才能在日後完整刷回官方韌體，當然，如果已經完全放棄官方韌體的話，這些問題都是不用考慮的。from -  http://blog.icece.tw/MiWiFi-Mini-Flash-uboot
 
-
+<!--more-->
 
 ## Disable middle button of mouse
 

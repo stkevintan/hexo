@@ -9,13 +9,18 @@
 		margin: -@gap /2;
 	}
 	.page-header {
-		text-align: center;
 		margin: 0px auto 20px auto;
-
+		padding: 0 @gap;
+		&:extend(.z-depth-1);
+		background:@white;
+		border-left: 2px solid @secondary-color;
 		h1 {
-			font-size: 0.875em;
+			font-size: 1.4rem;
 			font-weight: normal;
-			color: lighten(@grey-color, 20%);
+			line-height: 2em;
+			span{
+				color: @secondary-color;
+			}
 		}
 	}
 

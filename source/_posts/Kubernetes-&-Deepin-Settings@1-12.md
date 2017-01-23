@@ -16,7 +16,7 @@ categories:
 
 会发生冲突，这是今天Archlinux无法启动输入法界面的元凶。重新安装freetype2\fontconfig\cairo以替换infinality-bundle。
 
-<!-- more -->
+
 
 ## 添加PPA出现GPG问题
 
@@ -30,7 +30,7 @@ gpg: 合计被处理的数量：1
 gpg:           已导入：1
 gpg: 找不到有效的 OpenPGP 数据。
 ```
-
+<!-- more -->
 
 
 #### 可能原因：

@@ -1,10 +1,12 @@
 ---
 title: Pandorabox之透明代理 
-tags: [Openwrt,路由器,科学上网]
+date: 2017-2-7
+categories: [Openwrt]
+tags: [路由器,科学上网,Shadowsocks,ChinaDNS]
 grammar_cjkRuby: true
 ---
 
-
+![enter description here][1]
 先修改Lan接口，避免在无线中继的时候发生本地Lan接口与wwan接口发生冲突导致无法登陆路由器。
 
 网络 -> Lan -> IPv4地址， 设置为 192.168.33.1更改之后需要重新连接一下网络。
@@ -53,4 +55,8 @@ DHCP/DNS
     	"忽略解析文件": true
     }
 
+
 总的来说，GoogleDNS(8.8.8.8:53)首先进过ss-tunnel转发到本地的127.0.0.1:1153上，然后通过ChinaDNS与国内DNS服务器融合成新的127.0.0.1:1053 实现了按照chnroute.txt区分国内外ip，实现分流。
+
+
+  [1]: https://ol1kreips.qnssl.com/PandoraBox.png "PandoraBox.png"

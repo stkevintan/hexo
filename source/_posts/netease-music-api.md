@@ -1,6 +1,7 @@
 ---
 title: 网易云音乐新API简述
-tags: [网易云音乐,API,Encryption
+date: 2017-2-8
+tags: [网易云音乐,API,Encryption]
 categories: [Web]
 grammar_cjkRuby: true
 ---

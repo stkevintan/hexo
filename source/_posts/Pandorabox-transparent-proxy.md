@@ -65,7 +65,34 @@ shadowsocks需要启动`ss-redir`来实现透明代理和`ss-tunnel`来实现UDP
 }
 ```
 
-总的来说，GoogleDNS(8.8.8.8:53)首先进过ss-tunnel转发到本地的`127.0.0.1:1153`上，然后通过ChinaDNS与国内DNS服务器融合成新的`127.0.0.1:1053` 实现了按照chnroute.txt区分国内外ip，实现分流。
+总的来说，GoogleDNS(8.8.8.8:53)首先进过ss-tunnel转发到本地的`127.0.0.1:1153`上，然后通过ChinaDNS与国内DNS服务器融合成新的`127.0.0.1:1053` 实现了国内外分流。
+
+## Update
+由于实用过程中还是经常不稳定，决定采用DNS-Forwarder方案。
+然而，官方并没有我的小米Mini路由架构的二进制包，只能自己动手丰衣足食了。
+
+### OpenWrt SDK
+首先明确小米路由器Mini的架构是ramips/mt7620a而现在运行的Pandorabox 16.10基于Openwrt Barrier Breaker。
+
+### 依赖
+```bash
+sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip gawk zlib1g-dev subversion mercurial
+```
+### 下载&编译
+```bash 
+curl https://downloads.openwrt.org/barrier_breaker/14.07/ramips/mt7620a/OpenWrt-SDK-ramips-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2 | tar -xjf 
+cd OpenWrt-SDK-*
+git clone https://github.com/aa65535/openwrt-dns-forwarder.git package/dns-forwarder # 获取Makefile
+make menuconfig # 选择要编译的包： Network -> dns-forwarder
+make package/dns-forwarder/compile V=99
+```
+### 拷贝&安装
+```bash
+scp Downloads/dns-forwarder_1.1.1-1_ramips_24kec.ipk root@192.168.33.1:/root/dns-forwarder.ipk
+scp Downloads/luci-app-dns-forwarder_1.6.0-1_all.ipk root@192.168.33.1:/root/luci-app-dns-forwarder.ipk
+ssh root@192.168.33.1
+opkg intall dns-forwarder.ipk luci-app-dns-forwarder.ipk
+```
 
 
   [1]: https://ol1kreips.qnssl.com/PandoraBox.png "PandoraBox.png"

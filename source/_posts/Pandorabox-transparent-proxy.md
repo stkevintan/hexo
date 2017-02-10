@@ -86,13 +86,33 @@ git clone https://github.com/aa65535/openwrt-dns-forwarder.git package/dns-forwa
 make menuconfig # 选择要编译的包： Network -> dns-forwarder
 make package/dns-forwarder/compile V=99
 ```
-### 拷贝&安装
+然而，愿景很好，但是在我的Deepin上`make menuconfig`这步就出错，想想`barrier_breaker`也是很久之前的版本了，出错大概是`ldxxxx`，感觉应该是GCC版本不兼容的缘故，然而Deepin上GCC只有6.2.0没有官方要求的4.8，怎么办呢？当时暂时想到下面几条解决方案
+1. 在自己电脑上重新编译一份GCC4.8： 太麻烦，而且还不能保证一定能成功。
+2. 用虚拟机装老版本的Ubuntu： 太浪费时间了，本身电脑BIOS就没有开启虚拟化支持。
+3. docker? 不错可以试一下。
+
+docker运行老版本ubuntu镜像不用太简单，一条命令搞定：
 ```bash
-scp Downloads/dns-forwarder_1.1.1-1_ramips_24kec.ipk root@192.168.33.1:/root/dns-forwarder.ipk
-scp Downloads/luci-app-dns-forwarder_1.6.0-1_all.ipk root@192.168.33.1:/root/luci-app-dns-forwarder.ipk
-ssh root@192.168.33.1
-opkg intall dns-forwarder.ipk luci-app-dns-forwarder.ipk
+ sudo docker run -t -i ubuntu:12.04.5 /bin/bash
 ```
+
+然而docker版本的ubuntu太过于精简了,需要配置一下：
+```bash
+# 安装缺失依赖
+apt-get install ccache curl
+# openwrt-sdk 编译不能以root用户进行，需要新建一个普通用户
+useradd kevin
+su kevin
+# 继续之前的编译步骤
+```
+
+好了，终于编译成功了，然而还是高兴的太早，仍然报错：
+```bash
+* pkg_hash_fetch_best_installation_candidate: Packages for helloworld found, but incompatible with the architectures configured
+```
+还是求助于Google，然后发现了这篇博客：[小米路由器mini折腾之配置opkg篇](https://blog.phpgao.com/xiaomi_router_opkg.html)，于是我的路由器就成砖了。hhhhhhhhh
+
+未完待续。。。。。。。。。。。。。。
 
 
   [1]: https://ol1kreips.qnssl.com/PandoraBox.png "PandoraBox.png"

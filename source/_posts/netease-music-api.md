@@ -16,12 +16,12 @@ grammar_cjkRuby: true
 ## 加密算法
 核心过程如下：
 ```Javascript
-    aesRsaEncrypt = function (text, pubKey, modulus, nonce) {
-        const secKey = createSecretKey(16);  // 随机生成16位加密密钥
-		return {
-			params:  aesEncrypt(aesEncrypt(text, nonce), secKey),
-			encSecKey: rsaEncrypt(secKey, pubKey, modulus)
-		}
+     aesRsaEncrypt = function (text, pubKey, modulus, nonce) {
+      const secKey = createSecretKey(16);  // 随机生成16位加密密钥
+      return {
+        params:  aesEncrypt(aesEncrypt(text, nonce), secKey),
+        encSecKey: rsaEncrypt(secKey, pubKey, modulus)
+      }
     }
 ```
 <!--more-->

@@ -2,6 +2,8 @@
 	color: lighten(@black, 2%);
   font-size: 1rem;
   line-height: 1.6;
+  word-break: break-all;
+  word-wrap: break-word;
   em {
   position: relative;
     &:before{
@@ -62,7 +64,7 @@
 	  position: relative;
     font-family: @base-font-family;
     font-weight: normal;
-    margin: 40px auto 30px auto;
+    margin: 20px auto 10px;
     left: 20px;
 
     &::before {
@@ -124,8 +126,6 @@
     margin: 0px 2px;
     border-radius: 2px;
     font-size: 1em;
-    word-break: break-all;
-    word-wrap: break-word;
     background: lighten(@background-color,5%);
   }
   .highlight {
@@ -175,24 +175,17 @@
     line-height: 1.5rem;
     margin-top: @gap;
     background: @qoute-background-color;
-    &:before{
-      content:"TAGS : ";
-      // position: absolute;
-      // top: 0;
-      // left:0;
-      // width: 2px;
-      // height: 100%;
-      // background:@secondary-color;
-    }
     &.article-tags{
       background: transparent;
     }
+    word-spacing: @gap/2;
 		a {
       position:relative;
       display: inline-block;
-      &+a{
-        margin-left: @gap/2;
-      }
+      word-spacing:0;
+      // &+a{
+      //   margin-left: @gap/2;
+      // }
       .enable-trans(.1s);
 			//background:@material-light-grey;
 			color: @grey-color;

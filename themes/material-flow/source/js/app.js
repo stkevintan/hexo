@@ -107,6 +107,18 @@ var customSearch;
 			}
 		})
 	}
+
+	function getPicture(){
+		const url = ROOT + 'js/lovewallpaper.json';
+		const $banner = $('.banner');
+		if($banner.length===0) return;
+		$.get(url).done(res=>{
+			if(res.data.length > 0){
+				const index = Math.floor(Math.random() * res.data.length);
+				$banner.css('background-image','url('+res.data[index].big+')');
+			}
+		})
+	}
 	$(function() {
 		//set header
 		setHeaderMenu();
@@ -114,7 +126,7 @@ var customSearch;
 		setHeaderSearch();
 		setWaves();
 		//setBanner();
-
+		getPicture();
 		$('.window-nav, .go-comment').on('click', scrolltoElement);
     $(".article .video-container").fitVids();
 

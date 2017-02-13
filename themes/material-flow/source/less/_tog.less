@@ -1,0 +1,21 @@
+.tog{
+  padding: @gap;
+  border-left: 3px solid @secondary-color;
+  background: @qoute-background-color;
+  a {
+    display: inline-block;
+    &:hover,&:active,&.active{
+      color: @accent-color;
+    }
+  } 
+  ol{
+    &.toc-child{
+      padding-left: @gap;
+    }
+    li{
+      list-style:none;
+      width: @tog-width;
+      &:extend(.txt-ellipsis);
+    }
+  }
+}

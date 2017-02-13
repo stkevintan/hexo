@@ -30,6 +30,7 @@
   var BAIDU_API_ID = "<%- theme.search.baidu_api_id %>";
   var SEARCH_SERVICE = "<%- theme.search.service %>";
   var ROOT = "<%- config.root %>"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
 </script>
 <%- js('js/search.js') %>
 <%- js('js/app.js') %>

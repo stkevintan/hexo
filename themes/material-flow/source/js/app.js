@@ -88,6 +88,12 @@ var customSearch;
 		Waves.attach('.waves-image');
 		Waves.init();
 	}
+	function setScrollReveal(){
+		const $reveal = $('.reveal');
+		if($reveal.length === 0) return; 
+		const sr = ScrollReveal();
+		sr.reveal('.reveal');
+	}
 	function setTocToggle() {
 		const $toc = $('.tog');
 		if ($toc.length === 0) return;
@@ -145,7 +151,7 @@ var customSearch;
 
 	function getHitokoto() {
 		const $hitokoto = $('#hitokoto');
-		if(hitokoto.length === 0) return;
+		if($hitokoto.length === 0) return;
 		const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
 		$('body').append('<script	src="%s"></script>'.replace('%s',url));
 		window.handlerHitokoto = (data) => {
@@ -154,16 +160,17 @@ var customSearch;
 				.text(data.hitokoto)
 			if(data.source) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s',data.source));
 			else if(data.author) $hitokoto.append('<cite> ——  %s</cite>'.replace('%s',data.author));
-
 			$hitokoto.css('color','white');
 		}
 	}
+
 	$(function () {
 		//set header
 		setHeaderMenu();
 		setHeaderMenuPhone();
 		setHeaderSearch();
 		setWaves();
+		setScrollReveal();
 		setTocToggle();
 		getHitokoto();
 		getPicture();

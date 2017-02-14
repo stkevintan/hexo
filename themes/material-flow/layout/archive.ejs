@@ -1,6 +1,9 @@
 <% if (page.year || page.month) { %>
 	<%- partial('_partial/archive') %>
 <% } else { %>
+  <section class="page-header category banner waves-image">
+    <h1 id='hitokoto'></h1>
+  </section>
   <article id="archive-page"
     class="post article white-box">
     <section class="archive">

@@ -1,9 +1,9 @@
 <% if (is_tag()) { %>
-	<section class="page-header tag banner">
+	<section class="page-header tag banner waves-image">
     <h1>Tag : <span><%= page.tag %></span></h1>
   </section>
 <% } else if (is_archive()) { %>
-	<section class="page-header archive banner">
+	<section class="page-header archive banner waves-image">
     <h1>Year : <span><%= page.year %><%= page.month ? '.' + page.month : '' %></span></h1>
   </section>
 <% } else if (is_category()) { %>
@@ -11,8 +11,8 @@
     <h1>Category : <span><%= page.category %></span></h1>
   </section>
 <% } else { %>
-  <section class="page-header category banner">
-    <h1>Welcome to my blog!</h1>
+  <section class="page-header category banner waves-image">
+    <h1 id='hitokoto'></h1>
   </section>
 <% } %>
 <section class="post-list">

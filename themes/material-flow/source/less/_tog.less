@@ -1,6 +1,22 @@
 .tog{
+  position:fixed;
+  top: @header-height + @gap * 2;
+  right: ~"calc((100% - @{container-width})/2)";
+  transition: all .24s ease-out;
+  @media(max-width: @container-width){
+    right: 0;
+  }
+  @media(max-width: @on-phone){
+    right: -@side-width;
+    &.active{
+      transform: translateX(-@side-width);
+    }
+  }
+  width: @side-width + 6px;
+  z-index:3;
+  &:extend(.z-depth-2);
   padding: @gap;
-  border-left: 3px solid @secondary-color;
+  border-left: 6px solid @secondary-color;
   background: @qoute-background-color;
   a {
     display: inline-block;
@@ -14,8 +30,11 @@
     }
     li{
       list-style:none;
-      width: @tog-width;
+      width: auto;
       &:extend(.txt-ellipsis);
     }
+  }
+  &:empty{
+    display:none;
   }
 }

@@ -2,10 +2,9 @@
     &:extend(.z-depth-1);
     background: @white;
     margin-bottom: @gap;
-    .header,.content{
-        padding: 0 @gap;
-        
-    }
+    // .header,.content{
+    //     padding: 0 @gap;
+    // }
     .header{
         &:before{
             content: '#';
@@ -14,7 +13,9 @@
             color: @secondary-color;
         }
         font-size: 1.2rem;
-        line-height: 3rem;
+        line-height: 2rem;
+        padding: 8px @gap;
+
     }
     .content{
         border-top: 1px solid fade(@black,10%); 

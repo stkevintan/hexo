@@ -17,12 +17,14 @@
 	}
 	.banner {
 		position: relative;
-		margin: 0px auto 20px auto;
+		display:block;
+		margin: 0px auto @gap;
 		&:extend(.z-depth-1);
 		background:@primary-color;
-		height: @side-width;
+		height: @banner-height;
+		width:100%;
     background-size: cover;
-    background-position: 50%;
+    background-position: 50% 20%;
 		h1 {
 			position: absolute;
 			bottom: 0;
@@ -30,14 +32,17 @@
 			margin:0;
 			padding: 0 @gap;
 			width: 100%;
-			color: @white;
-			font-size: 1.4rem;
+			min-height: 48px;
+			color: transparent;
+			font-size: 1.2rem;
+			line-height: 2rem;
+			padding: 8px @gap;
 			font-weight: normal;
-			line-height: 2em;
 			background: fade(#000,60%);
-			font-style:italic;
-			span{
-				font-style:normal;
+			transition: all 0.24s ease-out;
+			cite{
+				font-style:italic;
+				font-size: 0.8em;
 			}
 		}
 	}
@@ -114,7 +119,7 @@
 					font-weight: normal;
 					color: lighten(@black, 2%);
 					&:hover {
-						color: lighten(@secondary-color, 3%);
+						color: @accent-color;
 					}
 				}
 			}

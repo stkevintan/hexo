@@ -48,6 +48,27 @@ body {
     }
   }
 }
+//reset ::-webkit-scrollbar
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    cursor:pointer;
+    transition: all .2s ease-out;
+    &:hover{
+      background: darken(#c1c1c1,10%);
+    } 
+}
+
 
 .z-depth-0 {
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);

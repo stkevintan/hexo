@@ -6,7 +6,7 @@ grammar_cjkRuby: true
 ---
 
 一个比二叉堆更高效的数据结构，但是实现起来非常复杂。本科的时候看《算法导论》的时候曾经研究过，不是很明白。今天终于对它有了一个比较清晰的了解。
-![fibonacciHeap](http://www.roading.org/images/2012-07/image.png)
+![enter description here][1]
 <!--more-->
 ```go
 package fibonacciHeap
@@ -256,3 +256,6 @@ func (F *FibonacciHeap) consolidate() {
 参考
 - https://www.roading.org/algorithm/introductiontoalgorithm/斐波那契堆fibonacci-heaps.html
 - http://www.cnblogs.com/skywang12345/p/3659060.html
+
+
+  [1]: https://ol1kreips.qnssl.com/image.png "image.png"

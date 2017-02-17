@@ -27,6 +27,7 @@ func QuickSort(arr []int) {
 	QuickSort(arr[left+1:])
 }
 ```
+<!--more-->
 ## 最短路
 最短路核心思想就是Relax操作。效率高的单源最短路有下面两种算法：
 1. Dijikstra，不能处理负权路,但是时间复杂度比较稳定.

@@ -89,7 +89,52 @@ func (G *Graph) SPFA(begin, end int) int {
 	return dist[end]
 }
 ```
+## KMP
+字符串匹配经典算法。关键在于维护一个这样的关系：`x[i-next[i]...i-1]=x[0...next[i]-1]`这样当匹配到`i`失败之后可以fallback到`next[i]`
+```go
+type Kmp struct {
+	pattern string
+	next    []int
+}
 
+// x[i-p...i-1]=x[0...p-1]
+func (K *Kmp) getNext() {
+	K.next = make([]int, len(K.pattern)+1)
+	K.next[0] = -1
+	i := 0
+	p := -1
+	for i < len(K.pattern) {
+		for p != -1 && K.pattern[i] != K.pattern[p] {
+			p = K.next[p]
+		}
+		p++
+		i++
+		if i < len(K.pattern) && K.pattern[i] == K.pattern[p] {
+			K.next[i] = K.next[p]
+		} else {
+			K.next[i] = p
+		}
+	}
+}
+
+func (K *Kmp) match(matcher string) int {
+	ret := 0
+	p := 0
+	i := 0
+	for i < len(matcher) {
+		for p != -1 && matcher[i] != K.pattern[p] {
+			p = K.next[p]
+		}
+		i++
+		p++
+		if p >= len(K.pattern) {
+			ret++
+			p = K.next[p]
+		}
+	}
+	return ret
+}
+```
 
 
 ___To Be Continue...___

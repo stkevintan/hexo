@@ -90,7 +90,7 @@ func (G *Graph) SPFA(begin, end int) int {
 }
 ```
 ## KMP
-字符串匹配经典算法。关键在于维护一个这样的关系：`x[i-next[i]...i-1]=x[0...next[i]-1]`这样当匹配到`i`失败之后可以fallback到`next[i]`
+字符串匹配经典算法。关键在于维护一个这样的关系：`x[i-next[i]...i-1]=x[0...next[i]-1]`
 ```go
 type Kmp struct {
 	pattern string
@@ -135,6 +135,33 @@ func (K *Kmp) match(matcher string) int {
 	return ret
 }
 ```
+## 并查集  
+一个十分有用的算法。关键点在DFS回溯阶段的路径压缩。  
+```go
+type UnionSet struct {
+	p []int
+	n int
+}
 
-
+func (U *UnionSet) init(n int) {
+	U.n = n
+	U.p = make([]int, n)
+	for i := 0; i < n; i++ {
+		U.p[i] = i
+	}
+}
+func (U *UnionSet) find(x int) int {
+	if U.p[x] != x {
+		U.p[x] = U.find(U.p[x])
+	}
+	return U.p[x]
+}
+func (U *UnionSet) merge(x, y int) {
+	parentX := U.find(x)
+	parentY := U.find(y)
+	if parentX != parentY {
+		U.p[parentX] = parentY // Supported tree X's height is less than tree Y.
+	}
+}
+```
 ___To Be Continue...___

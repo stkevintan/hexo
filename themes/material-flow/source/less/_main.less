@@ -1,6 +1,7 @@
 .l_main {
-    flex: 1 1 auto;
-    width:~"calc(100% - @{side-width} - @{gap})"; //fix for firefox
+    width: 100%;
+    padding-right: @side-width + @gap;
+    float: left;
     .post-list {
         position: relative;
         margin: 0px auto;
@@ -86,7 +87,7 @@
                 margin-left: -@gap;
                 margin-right: -@gap;
                 width:~"calc(100% + 2 * @{gap})";
-                max-width:none;
+                max-width: none;
             }
         }
     }
@@ -170,12 +171,13 @@
             width:~"calc(100% + @{gap}*3)";
             max-width: none;
         }
-        img{
+        img {
             -o-object-fit: contain;
             object-fit: contain;
         }
     }
     @media(max-width:@on-phone) {
+        padding-right: 0;
         .mobile-post();
         .post,
         .banner {

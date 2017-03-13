@@ -23,7 +23,7 @@
           <div class="archive-item archive-post mark">
             <a href="<%= url_for(post.path) %>">
               <time><%= date(post.date, 'MM-DD') %></time>
-              <span class="title"><%= post.title %></span>
+              <span class="title"><span><%= post.title %></span></span>
             </a>
           </div>
       <% }); %>

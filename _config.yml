@@ -81,8 +81,11 @@ search:
 autoprefixer:
   exclude:
     - '*.min.css'
-  browsers:
-    - 'last 2 versions'
+  # remove: false # prevent autoprefixer remove page-break-inside
+  # browsers:
+  #   - 'last 2 versions'
+  #   - '> 5%'
+
 # Generator json content
 jsonContent:
   meta: false

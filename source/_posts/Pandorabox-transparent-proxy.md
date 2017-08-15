@@ -114,5 +114,7 @@ su kevin
 
 未完待续。。。。。。。。。。。。。。
 
+## 2017-8-15 update
+拿去店里救砖成功。刷了不死breed，但是现在反而没有什么折腾劲了。
 
   [1]: https://ol1kreips.qnssl.com/PandoraBox.png "PandoraBox.png"

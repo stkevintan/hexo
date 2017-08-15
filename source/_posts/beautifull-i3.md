@@ -2,6 +2,7 @@
 title:  体验I3之美
 categories: [Linux]
 tags: [gnome,i3wm]
+date: 2017-3-20
 grammar_cjkRuby: true
 ---
 ![enter description here][1]
